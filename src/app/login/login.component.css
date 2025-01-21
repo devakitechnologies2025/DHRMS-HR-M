@@ -1,0 +1,189 @@
+
+body {
+    font-family: 'Lexend', sans-serif;
+}
+.container {
+    display: flex;
+    width: 100%;
+    height: 95vh;
+}
+.left {
+    width: 45%;
+    background-color: #3f8cff;
+    color: aliceblue;
+    padding: 50px;
+    /* text-align: left; */
+
+    border-radius: 30px 0 0 30px;
+    margin: 20px 0 0px 40px;
+}
+.left h1 {
+    font-size: 50px;
+    margin-left: 80px; /* Move the text slightly to the right */
+}
+.left img {
+    width: 80%;
+    max-width: 600px;
+    margin-left: 10%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.left h2 span {
+    font-size: 45px; /* Increase size of HRMS text */
+    font-weight: bold; /* Optional: Make text bold */
+  }
+.left h2 {
+    gap:5px;
+    display: flex;
+    align-items: center; /* Align image and text vertically */
+  }
+  
+  .left h2 img, .right h1 img {
+    width: 50px; /* Set the image width similar to an emoji size */
+    height: 50px; /* Maintain aspect ratio */
+    border-radius: 10px; /* Make the image circular */
+    margin-right: 10px; /* Add some space between image and text */
+    margin-bottom: 0px;
+  }
+  .right h1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #005cc1;
+  }
+  .right h1 img {
+    border: 2px solid #005cc1;
+  }
+.right h2 img.welcome-icon {
+    width: 50px; /* Set the width to a smaller value */
+    height: auto; /* Keep the aspect ratio intact */
+    vertical-align: middle; /* Align the image vertically with the text */
+    margin-left: 3px; /* Space between the text and the icon */
+}
+.right form input#username:focus,
+.right form input#password:focus {
+    outline: none; /* Remove the default focus outline */
+    border-color: #005cc1; /* Blue border on focus */
+    transition: border-color 0.3s ease; /* Smooth transitions */
+}
+.right {
+    width: 45%;
+    padding: 30px;
+    padding-top: 9%;
+    border-radius:0 30px 30px 0 ;
+    /* margin:10px 20px 10px 0; */
+    margin-left: 100px;
+
+}
+.right h2 {
+    top:0;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.right p {
+    font-size: 20px;
+    color: rgb(131, 129, 126);
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.right form input {
+    width: 60%;
+    height: 35px;
+    padding: 10px;
+    /* margin: 3px 0; */
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid rgb(222, 222, 209);
+}
+.right form button {
+    padding: 15px 20px; /* Increase padding for more height */
+    height: 50px; /* Explicitly set the height */
+    margin-top: 10px;
+    width: 63%;
+    background-color: #3f8cff;
+    color: aliceblue;
+    border-radius: 10px;
+    border: 1px solid rgb(246, 246, 209);
+    cursor: pointer;
+    font-size: 16px; 
+}
+input.has-data {
+    border-color: #3f8cff; /* Example: blue border for filled input */
+  }
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .left, .right {
+        width: 100%;
+    }   
+}
+.right .error-message {
+    color: red !important;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.comlog {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Adjust spacing between the image and "HRMS" */
+    margin-bottom: 10px; /* Reduce the space below the logo */
+}
+
+.comlog img {
+    margin-right: 5px; /* Adjust spacing between the image and "HRMS" */
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Adjust spacing between "Welcome" and the emoji */
+    margin-top: 5px; /* Reduce space above the "Welcome" heading */
+}
+
+h2 img.welcome-icon {
+    margin-left: 5px; /* Optional: Adjust spacing between "Welcome" and the emoji */
+}
+
+
+  .actions a {
+    display: inline-block;
+    margin: 5px 10px; /* Add spacing between the links */
+    font-size: 18px;
+    color: #005cc1; /* Match your theme's primary color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Add a hover effect */
+  }
+  
+  .actions a:hover {
+    color: #003a80; /* Darker shade for hover */
+  }
+  
+  #forget {
+    margin-left: 254px;
+  }
+  #newuser{
+    margin-top: 5%;
+    margin-left: 180px;
+  }
+  
+
+  .separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    color: #666;
+    font-size: 25px;
+    width: 65%;
+  }
+  
+  .separator::before,
+  .separator::after {
+    content: '';
+    flex: 1;
+    border-top: 1px solid #67a4f9;
+    margin: 0 10px;
+  }
+  

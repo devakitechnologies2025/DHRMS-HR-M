@@ -1,0 +1,56 @@
+<div class="container">
+  <!-- Left Side: Information -->
+  <div class="left">
+    <h2 class="comlog"><img src="../../assets/devaki tech.jpg"><span> HRMS</span></h2>
+    <h1>Your place to work<br>Plan. Create. Control</h1>
+    <img src="../../assets/Illustration.jpg" alt="Workspace illustration">
+  </div>
+
+  <!-- Right Side: Login Form -->
+  <div class="right">
+    <h1 class="comlog"><img src="../../assets/devaki tech.jpg"><span>HRMS</span></h1> 
+    <h2>
+      Welcome
+      <img src="../../assets/path-to-emoji.jpg" alt="Hello Hand Icon" class="welcome-icon" />
+    </h2>
+    
+    <p>Please login here</p>
+
+    <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+    
+    <form (ngSubmit)="validateCredentials()">
+      <label for="username"></label><br />
+      <input
+        type="text"
+        id="username"
+        name="username"
+        [(ngModel)]="email"
+        
+        placeholder="Email or Employee Id"
+      /><br />
+      <label for="password"></label><br />
+      <div class="password-container">
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Password"
+          [(ngModel)]="password"
+          required
+        /><br />
+        <!-- <i class="eye-icon" (click)="togglePasswordVisibility('password')">
+          <img src="../../assets/view.png" alt="Eye Icon" />
+        </i> -->
+      </div>
+      
+      <button type="submit">Login</button>
+    </form>
+    <div class="actions">
+      <a routerLink="/forgot-password" id="forget">Forgot Password?</a><br>
+      <div class="separator">
+        <span>or</span>
+      </div>
+      <a routerLink="/newuser" id="newuser">New User?</a>
+    </div>
+  </div>
+</div>

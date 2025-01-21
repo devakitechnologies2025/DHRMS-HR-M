@@ -1,0 +1,131 @@
+<div class="header">
+    <div class="username">
+        <span *ngIf="!showGreetingAndIcon">
+            <div>{{ currentRoute }}</div>
+            <div class="greeting-text">{{ greeting }}</div>
+          </span>
+        
+          <!-- Default behavior: show hello icon and username -->
+          <span *ngIf="showGreetingAndIcon">
+            <span class="username">{{ 'Hello, ' + username }}👋</span>
+            <!-- <span class="hello-icon">👋</span> -->
+            <span class="greeting-text">{{ greeting }}</span>
+          </span>
+    </div>
+
+    <div class="search-bar">
+        <input type="text" placeholder="Search..." />
+        <img src="../../assets/bell.png" alt="Notification" class="notification-icon">
+    </div>
+
+    <!-- Employee Info Section -->
+    <div class="employee-info">
+        <img src="../../assets/profile.png" alt="Employee Image" class="emp-image"> <!-- Employee Image -->
+        <div class="emp-details">
+            <span class="emp-name">Ameer</span> <!-- Employee Name -->
+            <span class="emp-designation">HR Manager</span> <!-- Employee Designation -->
+        </div>
+        <a class="logout-symbol" (click)="toggleLogoutMenu()" [class.rotated]="isMenuVisible" >&#94;</a> <!-- Caret symbol for logout menu toggle -->
+        <div class="logout-menu" *ngIf="isMenuVisible">
+            <button class="logout-btn" (click)="logout()">Logout</button>
+        </div>
+    </div>
+
+</div>
+
+<div class="left-panel">
+    <h2 class="comlog">
+        <img src="../../assets/devaki tech.jpg" alt="Company Logo" class="company-logo">
+        <span>HRMS</span>
+    </h2>
+
+    <a 
+        class="example-btn" 
+        [ngClass]="{'active': activeButton === 'dashboard'}" 
+        (click)="setActiveButton('dashboard')" 
+        routerLink="/header/dashboard">
+        <img src="../../assets/dashboard.png" alt="Dashboard Icon" class="btn-icon"> Dashboard
+    </a>
+
+    <a 
+        class="example-btn" 
+        [ngClass]="{'active': activeButton === 'employees'}" 
+        (click)="setActiveButton('employees')" 
+        routerLink="/header/all-employees">
+        <img src="../../assets/allemp.png" alt="Employees Icon" class="btn-icon"> All Employees
+    </a>
+
+    <a 
+        class="example-btn" 
+        [ngClass]="{'active': activeButton === 'departments'}" 
+        (click)="setActiveButton('departments')" 
+        routerLink="/header/all-departments">
+        <img src="../../assets/alldep.png" alt="Departments Icon" class="btn-icon"> All Departments
+    </a>
+
+    <a 
+        class="example-btn" 
+        [ngClass]="{'active': activeButton === 'attendance'}" 
+        (click)="setActiveButton('attendance')" 
+        routerLink="/header/attendance">
+        <img src="../../assets/attendence.png" alt="Attendance Icon" class="btn-icon"> Attendance
+    </a>
+
+    <a 
+        class="example-btn" 
+        [ngClass]="{'active': activeButton === 'engage'}" 
+        (click)="setActiveButton('engage')" 
+        routerLink="/header/employee-engage">
+        <img src="../../assets/empemg.png" alt="Engage Icon" class="btn-icon"> Employee Engage...
+    </a>
+
+    <a 
+        class="example-btn" 
+        [ngClass]="{'active': activeButton === 'payroll'}" 
+        (click)="setActiveButton('payroll')" 
+        routerLink="/header/payroll">
+        <img src="../../assets/payroll.png" alt="Payroll Icon" class="btn-icon"> Payroll
+    </a>
+
+    <a 
+        class="example-btn" 
+        [ngClass]="{'active': activeButton === 'projects'}" 
+        (click)="setActiveButton('projects')" 
+        routerLink="/header/projects">
+        <img src="../../assets/jobspro.png" alt="Projects Icon" class="btn-icon"> Projects
+    </a>
+
+    <a 
+        class="example-btn" 
+        [ngClass]="{'active': activeButton === 'jobs'}" 
+        (click)="setActiveButton('jobs')" 
+        routerLink="/header/jobs">
+        <img src="../../assets/jobspro.png" alt="Jobs Icon" class="btn-icon"> Jobs
+    </a>
+
+    <a 
+        class="example-btn" 
+        [ngClass]="{'active': activeButton === 'leaves'}" 
+        (click)="setActiveButton('leaves')" 
+        routerLink="/header/leaves">
+        <img src="../../assets/leaves.png" alt="Leaves Icon" class="btn-icon"> Leaves
+    </a>
+
+    <a 
+        class="example-btn" 
+        [ngClass]="{'active': activeButton === 'holidays'}" 
+        (click)="setActiveButton('holidays')" 
+        routerLink="/header/holidays">
+        <img src="../../assets/Holidays.png" alt="Holidays Icon" class="btn-icon"> Holidays
+    </a>
+
+    <a 
+        class="example-btn" 
+        [ngClass]="{'active': activeButton === 'settings'}" 
+        (click)="setActiveButton('settings')" 
+        routerLink="/header/settings">
+        <img src="../../assets/setting.png" alt="Settings Icon" class="btn-icon"> Settings
+    </a>
+</div>
+
+<router-outlet></router-outlet>

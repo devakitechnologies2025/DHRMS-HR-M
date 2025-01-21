@@ -1,0 +1,35 @@
+<div class="software-container">
+  <!-- Search and Actions in the same row -->
+  <div class="search-actions">
+    <input type="text" placeholder="Search..." class="search-bar" />
+    <button class="new-department-btn" (click)="openAddDepartmentForm()">
+      <img src="../../assets/add-circle.png" alt="New Department" class="button-icon" />
+      New Department
+    </button>
+    <button class="filter-btn">
+      <img src="../../assets/filter.png" alt="Filter" class="button-icon" />
+      Filter
+    </button>
+  </div>
+
+  <!-- No Data Message -->
+  <div *ngIf="!departments?.length" class="no-data">No data to display</div>
+
+  <!-- Department Cards -->
+  <div *ngIf="departments?.length" class="grid-container">
+    <div *ngFor="let department of departments" class="card">
+      <h3>{{ department.name }}</h3>
+      <p>{{ department.greeting }}</p>
+      <hr class="department-divider" /> <!-- Horizontal Line -->
+      <a href="#" class="view-all">View All</a>
+      <div class="employee" *ngFor="let emp of department.employees">
+        <img [src]="'../../assets/people/' + emp.img" class="emp-img" />
+        <div class="emp-details">
+          <span class="name">{{ emp.name }}</span>
+          <span class="designation">{{ emp.designation }}</span>
+        </div>
+        <span class="details">&gt;</span>
+      </div>
+    </div>
+  </div>
+</div>
