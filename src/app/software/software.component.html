@@ -1,34 +1,72 @@
-<div class="software-container">
-  <!-- Search and Actions in the same row -->
-  <div class="search-actions">
-    <input type="text" placeholder="Search..." class="search-bar" />
-    <button class="new-department-btn" (click)="openAddDepartmentForm()">
-      <img src="../../assets/add-circle.png" alt="New Department" class="button-icon" />
-      New Department
-    </button>
-    <button class="filter-btn">
-      <img src="../../assets/filter.png" alt="Filter" class="button-icon" />
-      Filter
-    </button>
+<div class="container mt-4">
+  <!-- Fixed Header (Search, Add, Filter) -->
+  <div class="fixed-header">
+    <div class="col-12 d-flex justify-content-between align-items-center search-container">
+      <!-- Search Input starts at the beginning of the row -->
+      <!-- <input type="text" class="form-control" placeholder="Search" style="flex-grow: 1; height: 45px;" /> -->
+      <div class="input-group">
+        <div class="position-relative w-100">
+            <img src="../../assets/search.png" alt="Search Icon" class="search-icon">
+            <input type="text" class="form-control search-bar ps-5" placeholder="Search">
+        </div>
+      </div>
+      
+      
+            <!-- Buttons aligned to the right -->
+      <div class="d-flex ml-auto">
+        <!-- Add New Department Button with Icon -->
+        <button class="btn btn-primary mx-2 d-flex align-items-center justify-content-center" 
+                (click)="openAddDepartmentForm()" 
+                style="height: 45px; white-space: nowrap; min-width: 200px; gap: 8px;">
+          <img src="../../assets/add-circle.png" alt="Add" width="20" height="20" />
+          Add New Department
+        </button>
+
+        <!-- Filter Button with Icon -->
+        <button class="btn btn-secondary btn-secondary-custom d-flex align-items-center justify-content-center" 
+        style="height: 45px; white-space: nowrap; min-width: 100px; gap: 8px;">
+          <img src="../../assets/filter.png" alt="Filter" width="20" height="20" />
+          Filter
+        </button>
+      </div>
+
+    </div>
   </div>
 
-  <!-- No Data Message -->
-  <div *ngIf="!departments?.length" class="no-data">No data to display</div>
-
-  <!-- Department Cards -->
-  <div *ngIf="departments?.length" class="grid-container">
-    <div *ngFor="let department of departments" class="card">
-      <h3>{{ department.name }}</h3>
-      <p>{{ department.greeting }}</p>
-      <hr class="department-divider" /> <!-- Horizontal Line -->
-      <a href="#" class="view-all">View All</a>
-      <div class="employee" *ngFor="let emp of department.employees">
-        <img [src]="'../../assets/people/' + emp.img" class="emp-img" />
-        <div class="emp-details">
-          <span class="name">{{ emp.name }}</span>
-          <span class="designation">{{ emp.designation }}</span>
-        </div>
-        <span class="details">&gt;</span>
+  <div *ngIf="!departments?.length" class="d-flex align-items-center justify-content-center w-100" style="height: 50vh;">
+    <div class="no-data text-center text-muted fs-4 ">No data to display</div>
+  </div>
+  <!-- Scrollable Department List -->
+  <div class="scrollable-content w-100" *ngIf="departments?.length">
+    <div class="row">
+      <div *ngFor="let department of departments" class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-header position-relative">
+            <h5 class="mb-1">{{ department.name }}</h5>
+            <p class="department-greeting">{{ department.greeting }}</p>
+            <span class="view-all">
+              <a class="text-primary">View All</a>
+            </span>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li *ngFor="let employee of department.employees" class="list-group-item d-flex align-items-center">
+              <img
+                [src]="'../../assets/people/' + employee.img"
+                alt="Employee Image"
+                class="rounded-circle me-3"
+                width="50"
+                height="50"
+              />
+              <div class="employee-details">
+                <div>
+                  <strong>{{ employee.name }}</strong>
+                  <p class="mb-0 text-muted">{{ employee.designation }}</p>
+                </div>
+                <a class="text-primary">&gt;</a><!-- The symbol added here -->
+              </div>
+            </li>
+          </ul>
+       </div>
       </div>
     </div>
   </div>

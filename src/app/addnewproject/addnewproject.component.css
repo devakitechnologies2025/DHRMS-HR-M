@@ -1,0 +1,8 @@
+.container{
+  width: 1080px;
+  height: 80vh;
+  border-radius: 10px;
+  margin-left: 304px;
+}
+.icon { width: 20px; height: 20px; }
+.form-control:focus { border-color: #3F8CFF; box-shadow: 0 0 5px #3F8CFF; }

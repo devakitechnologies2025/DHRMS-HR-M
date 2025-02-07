@@ -11,6 +11,7 @@ export class AddDepartService {
   private departments: { name: string; employees: any[] }[] = [];
   private departmentsSubject = new BehaviorSubject(this.departments);
   departments$ = this.departmentsSubject.asObservable();
+  addProject: any;
 
   // Method to set the visibility of the form
   toggleFormVisibility(isVisible: boolean) {

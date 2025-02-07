@@ -1,93 +1,51 @@
-.cards-container {
-    
-    margin-top: 50px;
-    height: 75vh; /* Set height to 80vh */
-    width: 1080px; /* Set container width to 75% */
-    border: 1px solid rgb(232, 224, 224); 
-    margin-left: 360px; /* Centers container horizontally */
+.container {
+    margin-top: 20px;
+    width: 1080px;
+    height: 75vh;
+    border: 1px solid rgb(232, 224, 224);
     border-radius: 10px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Creates 4 equal columns */
-    gap: 5px; /* Adds some space between the cards */
-    grid-template-rows: auto auto ; /* Creates 2 rows */
+    margin-left: 305px;
+    padding: 20px;
 }
 
-.card-link {
-    text-decoration: none; /* Removes underline from the link */
-    display: block;        /* Ensures the link spans the entire card */
-    color: inherit;        /* Keeps the text color unchanged */
-}
+ .card-link {
+    text-decoration: none;
+    color: inherit;
+ }
 
- 
-.card1, .card2, .card3, .card4, .card5 {
-    
+ .card {
     height: 155px;
-    width: 234px;
+    width: 100%;
+    border: none;
+    color: #F0F0F0;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     text-align: start;
-}
-.container {
-    padding: 20px 16px;  /* Add padding-top to move the text down */
-    position: relative;
-    top: 35px; /* Adjust top value as per your need */
-    color: #F0F0F0;
+ }
+
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.card1 .container {
-    display: flex;
-    align-items: end; /* Align items vertically */
-    gap: 10px; /* Space between icon and text */
-    padding: 2px 16px;
-}
-
-.cards-container .container {
-    display: flex;
-    align-items: center; /* Align text and image vertically */
-    justify-content: space-between; /* Create space between text and image*/
-    padding: 10px 16px; /* Add some padding */
+.card-body {
+    padding: 10px 16px;
 }
 
 h1 {
-    
-    font-size: 25px; /* Adjust the font size as needed */
-    margin: 0; /* Remove default margins */
+    font-size: 20px;
+    margin: 0;
 }
 
 .icon {
-    margin-right: 20px;
-    width: 50px; /* Set icon width */
-    height: 44px; /* Set icon height */
-}
-h1, .icon{
-    margin-top: 5px;
+    width: 50px;
+    height: 44px;
 }
 
-
-.card1, .card2, .card3, .card4 {
-    margin-top: 30px; /* Adjust this value to your desired top margin */
-}
-.card1:hover, .card2:hover, .card3:hover, .card4:hover, .card5:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-.card1{
-    margin-left: 20px;
-}
-.card5{
-    margin-top: 20px;
-    margin-bottom: 220px;
-    margin-left: 20px; /* Aligns card5 with others */
-    
-}
-
-.container {
-    padding: 2px 16px;
-}
-
-/* Specific styles for individual cards (if needed) */
+/* Card Backgrounds */
 .card1 { background: linear-gradient(107.33deg, #007BFF 1.06%, rgba(0, 255, 121, 0) 103.76%);}
-.card2 {background: linear-gradient(107.33deg, #FF5C00 1.06%, rgba(0, 255, 121, 0) 103.76%) }
-.card3 {background: linear-gradient(107.33deg, #002855 1.06%, rgba(0, 255, 121, 0) 103.76%) }
-.card4 {background: linear-gradient(107.33deg, #77DD77 1.06%, rgba(0, 255, 121, 0) 103.76%)}
-.card5 {background: linear-gradient(107.33deg, #FFC107 1.06%, rgba(0, 255, 121, 0) 103.76%)}
+.card2 { background: linear-gradient(107.33deg, #FF5C00 1.06%, rgba(0, 255, 121, 0) 103.76%);}
+.card3 { background: linear-gradient(107.33deg, #002855 1.06%, rgba(0, 255, 121, 0) 103.76%);}
+.card4 { background: linear-gradient(107.33deg, #77DD77 1.06%, rgba(0, 255, 121, 0) 103.76%);}
+.card5 { background: linear-gradient(107.33deg, #FFC107 1.06%, rgba(0, 255, 121, 0) 103.76%);}

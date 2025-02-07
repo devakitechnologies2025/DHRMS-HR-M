@@ -17,6 +17,9 @@ import { BankingComponent } from './banking/banking.component';
 import { HospitalComponent } from './hospital/hospital.component';
 import { SchoolComponent } from './school/school.component';
 import { AddDepartmentComponent } from './add-department/add-department.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { AddnewprojectComponent } from './addnewproject/addnewproject.component';
+import { HolidaysComponent } from './holidays/holidays.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,9 @@ import { AddDepartmentComponent } from './add-department/add-department.componen
     BankingComponent,
     HospitalComponent,
     SchoolComponent,
+    ProjectsComponent,
+    AddnewprojectComponent,
+    HolidaysComponent,
   ],
   imports: [
     BrowserModule,

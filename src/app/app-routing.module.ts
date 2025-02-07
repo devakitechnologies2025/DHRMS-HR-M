@@ -12,6 +12,9 @@ import { BankingComponent } from './banking/banking.component';
 import { HospitalComponent } from './hospital/hospital.component';
 import { SchoolComponent } from './school/school.component';
 import { AddDepartmentComponent } from './add-department/add-department.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { AddnewprojectComponent } from './addnewproject/addnewproject.component';
+import { HolidaysComponent } from './holidays/holidays.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -29,36 +32,15 @@ const routes: Routes = [
       {path:'banking',component:BankingComponent},
       {path:'hospital',component:HospitalComponent},
       {path:'school',component:SchoolComponent},
-      {path:'add-department',component:AddDepartmentComponent}
+      {path:'add-department',component:AddDepartmentComponent},
+      {path:'projects',component:ProjectsComponent},
+      {path:'addnewproject',component:AddnewprojectComponent},
+      {path:'holidays',component:HolidaysComponent},
     ]
   },
 ];
 
-// const routes: Routes = [
-//   { path: '', redirectTo: '/login', pathMatch: 'full' },
-//   { path: 'login', component: LoginComponent },
-//   { path: 'forgot-password', component: ForgetpasswordComponent },
-//   { path: 'newuser', component: NewuserComponent },
-//   {
-//     path: 'header',
-//     component: HeaderLeftpannelComponent,
-//     children: [
-//       { path: 'dashboard', component: DashboarComponent },
-//       {
-//         path: 'all-departments',
-//         component: AllDepartmentsComponent,
-//         children: [
-//           { path: 'software', component: SoftwareComponent },
-//           { path: 'non-it', component: NonitComponent },
-//           { path: 'banking', component: BankingComponent },
-//           { path: 'hospital', component: HospitalComponent },
-//           { path: 'school', component: SchoolComponent }
-//         ]
-//       },
-//       { path: 'add-department', component: AddDepartmentComponent }
-//     ]
-//   }
-// ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

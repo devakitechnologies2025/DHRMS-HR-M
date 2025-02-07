@@ -10,55 +10,47 @@
     align-items: center;
     z-index: 1000;
 }
-
+.add-department-form input{
+    margin-top: 10px;
+    width: 330px;
+    height: 45px;
+    box-shadow: none;
+    font-size: 18px;
+}
 .add-department-form {
     background-color: white;
     padding: 30px;
     border-radius: 20px;
-    width: 350px;
-    height: 280px;
+    width: 380px;
+    height: 290px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .add-department-form h2 {
-    margin-bottom: 20px;
-}
-
-.add-department-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 26px;
-}
-
-.add-department-form input {
-    width: 90%;
-    height: 35px;
-    padding: 10px;
-    margin-top: 40px;
-    border-radius: 10px;
     font-size: 20px;
-    border: 1px solid #ccc;
-}
-
-.form-actions {
-    margin-top: 50px;
-    display: flex;
-    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .cancel-btn,
 .add-btn {
-    width: 160px;
+    width: 140px;
     height: 40px;
+    margin-top: 40px;
     border-radius: 10px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 18px; /* Adjust font size if necessary */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the text inside the button */
+    text-align: center;
+    white-space: nowrap; /* Prevent text from wrapping */
+    padding: 5px 10px; /* Adjust padding */
 }
 
 .cancel-btn {
     border: 1px solid #A2A1A833;
-    color:#16151C;
-    background-color: none;
+    color: #16151C;
+    background-color: transparent;
 }
 
 .add-btn {

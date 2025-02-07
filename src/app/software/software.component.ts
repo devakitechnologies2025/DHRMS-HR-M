@@ -22,6 +22,7 @@ interface Department {
   styleUrl: './software.component.css'
 })
 export class SoftwareComponent {
+emp: any;
 // require(arg0: string) {
 // throw new Error('Method not implemented.');
 // }
@@ -41,11 +42,11 @@ export class SoftwareComponent {
     {
       name: 'IT Support',
       employees: [
-        { img: 'p1.jpeg', name: 'Sam', designation: 'Support Lead' },
-        { img: 'p2.jpeg', name: 'Paul', designation: 'Analyst' },
+        { img: 'p4.jpeg', name: 'Sam', designation: 'Support Lead' },
+        { img: 'p5.jpeg', name: 'Paul', designation: 'Analyst' },
         { img: 'p3.jpeg', name: 'John', designation: 'Technician' },
-        { img: 'p4.jpeg', name: 'Mark', designation: 'Supervisor' },
-        { img: 'p5.jpeg', name: 'Lisa', designation: 'Coordinator' }
+        { img: 'p1.jpeg', name: 'Mark', designation: 'Supervisor' },
+        { img: 'p2.jpeg', name: 'Lisa', designation: 'Coordinator' }
       ]
     },
     {

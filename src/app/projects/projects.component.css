@@ -1,0 +1,108 @@
+.container {
+  width: 1080px;
+  height: 80vh;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-left: 304px;
+}
+.fixed-header{
+  padding: 10px;
+}
+.table-container {
+  max-height: calc(80vh - 90px); /* Adjust based on header size */
+  overflow-y: auto;
+}
+
+.table {
+  width: 100%; /* Ensure table takes full width of the container */
+  border-collapse: collapse; /* Remove unnecessary gaps between cells */
+}
+
+thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: white;
+}
+.form-control{
+  box-shadow: none;
+  width: 330px;
+  font-size: 18px;
+  border-radius: 10px;
+}
+.btn-primary{
+  width: 200px;
+  height: 45px;
+  margin-left: 5px;
+  border-radius: 10px;
+}
+.table thead th {
+  color: #A2A1A8; /* Replace with your desired color */
+  font-weight: normal; /* Optional: Make the text bold for better visibility */
+}
+.table tbody td {
+  color: #16151C; /* Replace #333 with your desired color */
+}
+.btn-light{
+  width: 100px;
+  height: 45px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+.custom-gap {
+  margin-left: 20px; /* Set your desired gap here */
+}
+.input-group {
+  position: relative;
+}
+
+.input-group .form-control {
+  padding-left: 40px; /* To make space for the search icon */
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.input-group .search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* Prevent the image from blocking input clicks */
+}
+
+.badge {
+  background-color: rgba(48, 190, 130, 0.1);
+  color: rgba(48, 190, 130, 1);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.badge.warning {
+  background-color: rgba(254, 184, 91, 0.1);
+  color: #feb85b;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Blurred background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+}
+
+.modal-content {
+ margin-top:5%;
+  position: relative;
+  width: 500px; /* Adjust width */
+  
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}

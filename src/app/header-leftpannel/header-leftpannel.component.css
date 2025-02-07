@@ -1,13 +1,17 @@
-/* Main Header Styling */
+/* Header Styling */
 .header {
-    width: 78%;
+    width: 100%;
     height: 70px;
-    margin-left: 330px;
+    margin-top: 20px;
     display: flex;
-    /* justify-content: space-between; */
+
     align-items: center;
+    padding: 10px 20px;
     border-radius: 10px;
 }
+
+
+
 .username {
     font-size: 20px;
     font-weight: 800;
@@ -22,52 +26,37 @@
     margin-top: 5px;
 }
 
-.hello-icon {
-    font-size: 30px;
-}
-
-/* Search Bar Styling */
-.search-bar {
-    display: flex;
-    gap: 10px;
-    border-radius: 10px;
-}
-
+/* Search Bar */
 .search-bar input {
-   margin-left: 405px;
-    height: 35px;
+    box-shadow: none;
     width: 300px;
-    padding: 5px 10px;
+    height: 50px;
     border-radius: 10px;
-    border: 1px solid #ccc;
+
     font-size: 16px;
 }
 
 .notification-icon {
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
+
     width: 35px;
-    height:35px;
-    margin-top: 5px;
+    height: 35px;
     background: #f8f8f8;
     border-radius: 5px;
-    font-size: 20px;
-    color: #555;
+
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-/* Employee Info Styling */
+
+/* Employee Info */
 .employee-info {
-    height:30px ;
-    width: 150px;
-    margin-left: 5px;
+    height: 50px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    margin-left: 5px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 10px;
+    background-color: #ffffff;
 }
 
 .emp-image {
@@ -85,6 +74,7 @@
 
 .emp-name {
     font-weight: bold;
+    font-size: 16px;
 }
 
 .emp-designation {
@@ -99,55 +89,39 @@
 }
 
 .logout-symbol.rotated {
-    transform: rotate(180deg); /* Rotates the symbol by 180 degrees */
+    transform: rotate(180deg);
 }
 
 .logout-menu {
-    display: block;
+    
     position: absolute;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5px;
-    padding: 10px;
-    top: 50px;
+    padding: 5px;
+    top: 100px;
     right: 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.logout-btn {
-    padding: 5px 10px;
-    font-size: 14px;
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-/* Left Panel Styles */
+/* Left Panel */
 .left-panel {
     position: fixed;
     top: 20px;
-    background-color: #f4f4f4;
-    width: 280px;
-    height: 984px;
-    border-radius: 10px;
-    padding: 10px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    z-index: 500;
-    transition: left 0.3s ease;
-}
-
-.left-panel.show {
     left: 0;
+    height: 100vh;
+    width: 280px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+
+
 }
 
 .company-logo {
     width: 50px;
     height: 50px;
-    border: 1px solid #5755c9;
+
     border-radius: 10px;
     margin-right: 10px;
 }
@@ -155,34 +129,34 @@
 .comlog {
     display: flex;
     align-items: center;
-    gap: 10px;
-}
-
-.comlog span {
-    font-size: 45px;
+    font-size: 24px;
     font-weight: bold;
     color: #005CC1;
 }
 
 .example-btn {
-    display: inline-flex;
-    height: 20px;
+    display: flex;
     align-items: center;
     color: #16151C;
-    text-decoration: none;  /* Remove underline from link */
-    padding: 10px 20px;
+    padding: 10px;
+    width: 220px;
+    font-size: 18px;
+    transition: background 0.3s ease-in-out;
     border-radius: 5px;
-    cursor: pointer;
-    font-size: 20px;
+}
+
+.example-btn:hover {
+    background-color: #e9ecef;
 }
 
 .example-btn.active {
     border-left: 5px solid #5755c9;
-    background-color:#e4e1e1 ;
+    background-color: #e4e1e1;
     color: #5755c9;
+
 }
 .example-btn.active .btn-icon {
-    filter: invert(22%) sepia(73%) saturate(5000%) hue-rotate(231deg) brightness(95%) contrast(90%);
+    filter: invert(30%) sepia(73%) saturate(5000%) hue-rotate(231deg) brightness(105%) contrast(100%);
 }
 
 
@@ -190,7 +164,5 @@
     width: 24px;
     height: 24px;
     margin-right: 10px;
-    vertical-align: middle;
+    
 }
-
-

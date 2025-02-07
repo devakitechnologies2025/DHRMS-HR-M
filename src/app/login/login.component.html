@@ -8,17 +8,18 @@
 
   <!-- Right Side: Login Form -->
   <div class="right">
-    <h1 class="comlog"><img src="../../assets/devaki tech.jpg"><span>HRMS</span></h1> 
-    <h2>
+    <div class="content">
+      <h1 class="comlog"><img src="../../assets/devaki tech.jpg"><span>HRMS</span></h1> 
+      <h2>
       Welcome
       <img src="../../assets/path-to-emoji.jpg" alt="Hello Hand Icon" class="welcome-icon" />
-    </h2>
+      </h2>
     
-    <p>Please login here</p>
+      <p>Please login here</p>
 
-    <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+      <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
     
-    <form (ngSubmit)="validateCredentials()">
+     <form (ngSubmit)="validateCredentials()">
       <label for="username"></label><br />
       <input
         type="text"
@@ -44,13 +45,15 @@
       </div>
       
       <button type="submit">Login</button>
-    </form>
-    <div class="actions">
+     </form>
+     <div class="actions">
       <a routerLink="/forgot-password" id="forget">Forgot Password?</a><br>
       <div class="separator">
         <span>or</span>
       </div>
       <a routerLink="/newuser" id="newuser">New User?</a>
-    </div>
+     </div>
+   </div>
   </div>
+    
 </div>

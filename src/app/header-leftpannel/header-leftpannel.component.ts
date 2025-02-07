@@ -86,7 +86,19 @@ export class HeaderLeftpannelComponent {
     } else if (route === '/header/school') {
       this.currentRoute = 'All Department - School';
       this.greeting = 'School';
-    } else {
+    }else if (route === '/header/projects') {
+      this.currentRoute = 'All Projects';
+      this.greeting = 'All Projects Information';
+    }
+    else if (route === '/header/holidays') {
+      this.currentRoute = 'Holidays';
+      this.greeting = 'Show All Holidays';
+    }
+    else if (route === '/header/addnewproject') {
+      this.currentRoute = 'All Projects';
+      this.greeting = 'Add New Project Information';
+    }
+     else  {
       // Handle other cases (like /header/dashboard)
       this.showGreetingAndIcon = true;
       this.setGreeting(); // Set default greeting
