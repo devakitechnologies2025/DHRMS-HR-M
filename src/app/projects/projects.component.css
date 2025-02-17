@@ -31,7 +31,7 @@ thead {
   border-radius: 10px;
 }
 .btn-primary{
-  width: 200px;
+  width: 180px;
   height: 45px;
   margin-left: 5px;
   border-radius: 10px;
@@ -44,7 +44,7 @@ thead {
   color: #16151C; /* Replace #333 with your desired color */
 }
 .btn-light{
-  width: 100px;
+  width: 90px;
   height: 45px;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -62,12 +62,12 @@ thead {
   padding-bottom: 10px;
 }
 
-.input-group .search-icon {
+.input-group .bi-search {
   position: absolute;
   left: 10px;
   top: 50%;
   transform: translateY(-50%);
-  pointer-events: none; /* Prevent the image from blocking input clicks */
+  
 }
 
 .badge {

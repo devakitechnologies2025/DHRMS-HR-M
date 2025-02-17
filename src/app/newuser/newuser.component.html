@@ -1,79 +1,47 @@
-<div class="new-user-container">
-    <h2>Create a New User Account</h2>
-    
-    <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
-    <form (ngSubmit)="onSubmit()">
-      <label for="name"></label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        [(ngModel)]="user.name"
-        (ngModelChange)="clearErrorMessage()"
-        required
-        placeholder="Enter your full name"
-      />
-  
-      <label for="mobile"></label>
-      <input
-        type="text"
-        id="mobile"
-        name="mobile"
-        [(ngModel)]="user.mobile"
-        (ngModelChange)="clearErrorMessage()"
-        required
-        placeholder="Enter your mobile number"
-      />
-  
-      <label for="email"></label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        [(ngModel)]="user.email"
-        (ngModelChange)="clearErrorMessage()"
-        required
-        placeholder="Enter your email"
-      />
-  
-      <label for="empid"></label>
-      <input
-        type="text"
-        id="empid"
-        name="empid"
-        [(ngModel)]="user.empid"
-        (ngModelChange)="clearErrorMessage()"
-        required
-        placeholder="Enter your employee ID"
-      />
-  
-      <label for="password"></label>
-      <input
-        type="password"
-        id="password"
-        name="password"
-        [(ngModel)]="user.password"
-        required
-        placeholder="Create a password"
-      />
-      <p *ngIf="errorpass" class="error-message">{{ errorpass }}</p>
-      <label for="confirmPassword"></label>
-      <input
-        type="password"
-        id="confirmPassword"
-        name="confirmPassword"
-        [(ngModel)]="user.confirmPassword"
-        required
-        placeholder="Confirm your password"
-      />
-  
-      <button type="submit" >Create Account</button>
-    </form>
-    <div class="actions">
-      <p>
-        Already have an account? <a routerLink="/login">Log in</a>
-      </p>
-    </div>
-</div>
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+  <div class="card p-4 shadow-lg" style="max-width: 600px; width: 100%; border-radius: 12px;">
+      <h2 class="text-center mb-3">Create a New User Account</h2>
 
-  
+      <p *ngIf="errorMessage" class="text-danger text-center fw-bold">{{ errorMessage }}</p>
+      
+      <form (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name" [(ngModel)]="user.name" (ngModelChange)="clearErrorMessage()" required>
+        </div>
+    
+        <div class="mb-3">
+            <input type="text" id="mobile" name="mobile" class="form-control" placeholder="Enter your mobile number" [(ngModel)]="user.mobile" (ngModelChange)="clearErrorMessage()" required>
+        </div>
+    
+        <div class="mb-3">
+            <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" [(ngModel)]="user.email" (ngModelChange)="clearErrorMessage()" required>
+        </div>
+    
+        <div class="mb-3">
+            <input type="text" id="empid" name="empid" class="form-control" placeholder="Enter your employee ID" [(ngModel)]="user.empid" (ngModelChange)="clearErrorMessage()" required>
+        </div>
+    
+        <div class="mb-3 position-relative">
+            <input type="password" id="password" name="password" class="form-control pe-5" placeholder="Create a password" [(ngModel)]="user.password" required>
+            <span class="position-absolute end-0 top-50 translate-middle-y me-3">
+                <i class="bi bi-eye" (click)="togglePasswordVisibility('password')"
+                style="cursor: pointer; font-size: 1.5rem;"> </i>
+            </span>
+        </div>
+    
+        <div class="mb-3 position-relative">
+            <input type="password" id="confirmPassword" name="confirmPassword" class="form-control pe-5" placeholder="Confirm your password" [(ngModel)]="user.confirmPassword" required>
+            <span class="position-absolute end-0 top-50 translate-middle-y me-3">
+                <i class="bi bi-eye" (click)="togglePasswordVisibility('confirmPassword')"
+                style="cursor: pointer; font-size: 1.5rem;"> </i>
+            </span>
+        </div>
+    
+        <button type="submit" class="btn btn-primary w-100">Create Account</button>
+    </form>
+
+      <div class="text-center mt-3">
+          <p>Already have an account? <a routerLink="/login" class="text-decoration-none fw-bold text-primary">Log in</a></p>
+      </div>
+  </div>
+</div>

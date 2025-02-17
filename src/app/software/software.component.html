@@ -6,7 +6,7 @@
       <!-- <input type="text" class="form-control" placeholder="Search" style="flex-grow: 1; height: 45px;" /> -->
       <div class="input-group">
         <div class="position-relative w-100">
-            <img src="../../assets/search.png" alt="Search Icon" class="search-icon">
+          <i class="bi bi-search fs-4"></i>
             <input type="text" class="form-control search-bar ps-5" placeholder="Search">
         </div>
       </div>
@@ -14,21 +14,22 @@
       
             <!-- Buttons aligned to the right -->
       <div class="d-flex ml-auto">
-        <!-- Add New Department Button with Icon -->
-        <button class="btn btn-primary mx-2 d-flex align-items-center justify-content-center" 
-                (click)="openAddDepartmentForm()" 
-                style="height: 45px; white-space: nowrap; min-width: 200px; gap: 8px;">
-          <img src="../../assets/add-circle.png" alt="Add" width="20" height="20" />
-          Add New Department
-        </button>
-
-        <!-- Filter Button with Icon -->
-        <button class="btn btn-secondary btn-secondary-custom d-flex align-items-center justify-content-center" 
-        style="height: 45px; white-space: nowrap; min-width: 100px; gap: 8px;">
-          <img src="../../assets/filter.png" alt="Filter" width="20" height="20" />
-          Filter
-        </button>
+          <!-- Add New Department Button with Icon -->
+          <button class="btn btn-primary d-flex align-items-center justify-content-center gap-2" 
+              (click)="openAddDepartmentForm()" 
+              style="height: 45px; white-space: nowrap; min-width: 200px;">
+              <i class="bi bi-plus-circle fs-"></i>
+            <span>Add New Department</span>
+          </button>
+          
+          <!-- Filter Button with Icon (Added `ms-3` for spacing) -->
+          <button class="btn btn-secondary btn-secondary-custom d-flex align-items-center justify-content-center ms-3" 
+              style="height: 45px; white-space: nowrap; min-width: 100px;">
+          <i class="bi bi-sliders me-2 "></i>
+            Filter
+          </button>
       </div>
+          
 
     </div>
   </div>

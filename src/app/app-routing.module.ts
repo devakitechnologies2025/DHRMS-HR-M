@@ -15,6 +15,7 @@ import { AddDepartmentComponent } from './add-department/add-department.componen
 import { ProjectsComponent } from './projects/projects.component';
 import { AddnewprojectComponent } from './addnewproject/addnewproject.component';
 import { HolidaysComponent } from './holidays/holidays.component';
+import { BranchComponent } from './branch/branch.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -36,6 +37,7 @@ const routes: Routes = [
       {path:'projects',component:ProjectsComponent},
       {path:'addnewproject',component:AddnewprojectComponent},
       {path:'holidays',component:HolidaysComponent},
+      {path:'branch',component:BranchComponent},
     ]
   },
 ];

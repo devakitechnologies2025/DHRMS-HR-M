@@ -13,6 +13,7 @@ export class LoginComponent {
   password: string = '';
   errorMessage: string = '';
   isFocused = false;
+  isPasswordVisible=true;
 
   onFocus() {
     this.isFocused = true;
@@ -25,8 +26,10 @@ export class LoginComponent {
     const inputField = document.getElementById(fieldId) as HTMLInputElement;
     if (inputField.type === 'password') {
       inputField.type = 'text';
+      this.isPasswordVisible=false;
     } else {
       inputField.type = 'password';
+      this.isPasswordVisible;
     }
   }
   validateCredentials(): void {

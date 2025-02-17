@@ -11,47 +11,48 @@
                 <div class="nav flex-column">
                     <a class="nav-link example-btn" [ngClass]="{'active': activeButton === 'dashboard'}" 
                         (click)="setActiveButton('dashboard')" routerLink="/header/dashboard">
-                        <img src="../../assets/dashboard.png" alt="Dashboard Icon" class="btn-icon"> Dashboard
+                        <i class="bi bi-grid me-2"></i>Dashboard
                     </a>
                     <a class="nav-link example-btn" [ngClass]="{'active': activeButton === 'employees'}" 
                         (click)="setActiveButton('employees')" routerLink="/header/all-employees">
-                        <img src="../../assets/allemp.png" alt="Employees Icon" class="btn-icon"> All Employees
+                        <i class="bi bi-people me-2"></i> All Employees
                     </a>
                     <a class="nav-link example-btn" [ngClass]="{'active': activeButton === 'departments'}" 
                         (click)="setActiveButton('departments')" routerLink="/header/all-departments">
-                        <img src="../../assets/alldep.png" alt="Departments Icon" class="btn-icon"> All Departments
+                       
+                        <i class="bi bi-arrow-repeat icon-sync me-2"></i>All Departments
                     </a>
                     <a class="nav-link example-btn" [ngClass]="{'active': activeButton === 'attendance'}" 
                         (click)="setActiveButton('attendance')" routerLink="/header/attendance">
-                        <img src="../../assets/attendence.png" alt="Attendance Icon" class="btn-icon"> Attendance
+                        <i class="bi bi-calendar-check me-2"></i> Attendance
                     </a>
                     <a class="nav-link example-btn" [ngClass]="{'active': activeButton === 'engage'}" 
-                        (click)="setActiveButton('engage')" routerLink="/header/employee-engage">
-                        <img src="../../assets/empemg.png" alt="Engage Icon" class="btn-icon"> Activities
+                        (click)="setActiveButton('engage')" routerLink="/header/branch">
+                        <i class="bi bi-person-badge me-2"></i> Branch
                     </a>
                     <a class="nav-link example-btn" [ngClass]="{'active': activeButton === 'payroll'}" 
                         (click)="setActiveButton('payroll')" routerLink="/header/payroll">
-                        <img src="../../assets/payroll.png" alt="Payroll Icon" class="btn-icon"> Payroll
+                        <i class="bi bi-currency-dollar me-2"></i> Payroll
                     </a>
                     <a class="nav-link example-btn" [ngClass]="{'active': activeButton === 'Projects'}" 
                         (click)="setActiveButton('Projects')" routerLink="/header/projects">
-                        <img src="../../assets/jobspro.png" alt="Payroll Icon" class="btn-icon"> Projects
+                        <i class="bi bi-briefcase me-2"></i> Projects
                     </a>
                     <a class="nav-link example-btn" [ngClass]="{'active': activeButton === 'Jobs'}" 
                         (click)="setActiveButton('Jobs')" routerLink="/header/Jobs">
-                        <img src="../../assets/jobspro.png" alt="Payroll Icon" class="btn-icon"> Jobs
+                        <i class="bi bi-briefcase me-2"></i> Jobs
                     </a>
                     <a class="nav-link example-btn" [ngClass]="{'active': activeButton === 'Leaves'}" 
                         (click)="setActiveButton('Leaves')" routerLink="/header/Leaves">
-                        <img src="../../assets/leaves.png" alt="Payroll Icon" class="btn-icon"> Leaves
+                        <i class="bi bi-clipboard me-2"></i> Leaves
                     </a>
                     <a class="nav-link example-btn" [ngClass]="{'active': activeButton === 'Holidays'}" 
                         (click)="setActiveButton('Holidays')" routerLink="/header/holidays">
-                        <img src="../../assets/Holidays.png" alt="Payroll Icon" class="btn-icon"> Holidays
+                        <i class="bi bi-calendar-event me-2"></i> Holidays
                     </a>
                     <a class="nav-link example-btn" [ngClass]="{'active': activeButton === 'Settings'}" 
                         (click)="setActiveButton('Settings')" routerLink="/header/Settings">
-                        <img src="../../assets/setting.png" alt="Payroll Icon" class="btn-icon"> Settings
+                        <i class="bi bi-gear me-2"></i> Settings
                     </a>
                 </div>
             </div>
@@ -72,9 +73,12 @@
                     </span>
                 </div>
 
-                <div class="search-bar ms-auto d-flex align-items-center">
-                    <input type="text" class="form-control" placeholder="Search..." />
-                    <img src="../../assets/bell.png" alt="Notification" class="notification-icon ms-2">
+                <div class="search-bar ms-auto d-flex align-items-center position-relative">
+                    <div class="position-relative search-container me-2">
+                        <i class="bi bi-search fs-4 "></i>
+                        <input type="text" class="form-control search-input" placeholder="Search">
+                    </div>
+                    <i class="bi bi-bell fs-3 me-2"></i>
                 </div>
 
                 <div class="employee-info d-flex align-items-center">

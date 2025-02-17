@@ -98,6 +98,10 @@ export class HeaderLeftpannelComponent {
       this.currentRoute = 'All Projects';
       this.greeting = 'Add New Project Information';
     }
+    else if (route === '/header/branch') {
+      this.currentRoute = 'Branche';
+      this.greeting = 'All Branche Informantion';
+    }
      else  {
       // Handle other cases (like /header/dashboard)
       this.showGreetingAndIcon = true;

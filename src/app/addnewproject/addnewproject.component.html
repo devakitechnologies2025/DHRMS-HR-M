@@ -1,21 +1,27 @@
-<div class="container mt-4 p-3 border rounded" >
-  <div class="d-flex gap-3 mb-2">
-    <div class="d-flex align-items-center gap-1" [ngClass]="{'border-bottom border-primary': currentSection === 'client'}">
-      <img src="../../assets/user.png" alt="Client Details Icon" class="icon" [ngStyle]="{'filter': currentSection === 'client' ? 'invert(22%) sepia(73%) saturate(5000%) hue-rotate(231deg) brightness(109%) contrast(90%)' : 'none'}" />
+<div class="container mt-4 p-3 border rounded">
+  <!-- Section Tabs -->
+  <div class="d-flex gap-4 mb-3">
+    <div class="d-flex align-items-center gap-2 pb-1 cursor-pointer"
+         [ngClass]="{'border-bottom border-primary': currentSection === 'client'}">
+      <i class="bi bi-person fs-4" [ngStyle]="{'color': currentSection === 'client' ? '#0d6efd' : 'inherit'}"></i>
       <h5 class="m-0" [ngClass]="{'text-primary': currentSection === 'client'}">Client Details</h5>
     </div>
-    <div class="d-flex align-items-center gap-1" [ngClass]="{'border-bottom border-primary': currentSection === 'budget'}">
-      <img src="../../assets/jobspro.png" alt="Budget Icon" class="icon" [ngStyle]="{'filter': currentSection === 'budget' ? 'invert(22%) sepia(73%) saturate(5000%) hue-rotate(231deg) brightness(109%) contrast(90%)' : 'none'}" />
+
+    <div class="d-flex align-items-center gap-2 pb-1 cursor-pointer"
+         [ngClass]="{'border-bottom border-primary': currentSection === 'budget'}">
+      <i class="bi bi-briefcase fs-4" [ngStyle]="{'color': currentSection === 'budget' ? '#0d6efd' : 'inherit'}"></i>
       <h5 class="m-0" [ngClass]="{'text-primary': currentSection === 'budget'}">Budget</h5>
     </div>
-    <div class="d-flex align-items-center gap-1" [ngClass]="{'border-bottom border-primary': currentSection === 'assign'}">
-      <img src="../../assets/lock.png" alt="Assign Project Icon" class="icon" [ngStyle]="{'filter': currentSection === 'assign' ? 'invert(22%) sepia(73%) saturate(5000%) hue-rotate(231deg) brightness(109%) contrast(90%)' : 'none'}" />
+
+    <div class="d-flex align-items-center gap-2 pb-1 cursor-pointer"
+         [ngClass]="{'border-bottom border-primary': currentSection === 'assign'}">
+      <i class="bi bi-lock fs-4" [ngStyle]="{'color': currentSection === 'assign' ? '#0d6efd' : 'inherit'}"></i>
       <h5 class="m-0" [ngClass]="{'text-primary': currentSection === 'assign'}">Assign Project</h5>
     </div>
   </div>
 
   <!-- Client Details Section -->
-  <div *ngIf="currentSection === 'client'" class="row g-2">
+  <div *ngIf="currentSection === 'client'" class="row g-3">
     <div class="col-md-6"><input type="text" class="form-control" placeholder="Project Name" [(ngModel)]="clientDetails.projectName"></div>
     <div class="col-md-6"><input type="text" class="form-control" placeholder="Client" [(ngModel)]="clientDetails.client"></div>
     <div class="col-md-6"><input type="text" class="form-control" placeholder="Country" [(ngModel)]="clientDetails.country"></div>
@@ -27,19 +33,30 @@
   </div>
 
   <!-- Budget Section -->
-  <div *ngIf="currentSection === 'budget'" class="row g-2">
-    <div class="col-md-6"><input type="number" class="form-control" placeholder="Budget" [(ngModel)]="budgetDetails.amount"></div>
-    <div class="col-md-6"><input type="number" class="form-control" placeholder="Per Hour" [(ngModel)]="budgetDetails.perHour"></div>
-    <div class="col-md-6"><input type="date" class="form-control" [(ngModel)]="budgetDetails.startDate"></div>
-    <div class="col-md-6"><input type="date" class="form-control" [(ngModel)]="budgetDetails.endDate"></div>
+  <div *ngIf="currentSection === 'budget'" class="row g-3">
+    <div class="col-md-6">
+      <input type="number" class="form-control" placeholder="Budget" [(ngModel)]="budgetDetails.amount" required>
+    </div>
+    <div class="col-md-6">
+      <input type="number" class="form-control" placeholder="Per Hour" [(ngModel)]="budgetDetails.perHour" required>
+    </div>
+    <div class="col-md-6 floating-label">
+      <label for="startDate" >Start Date</label>
+      <input type="date" class="form-control" id="startDate" [(ngModel)]="budgetDetails.startDate" required>
+    </div>
+    <div class="col-md-6 floating-label">
+      <label for="endDate">End Date</label>
+      <input type="date" class="form-control" id="endDate" [(ngModel)]="budgetDetails.endDate" required>
+    </div>
   </div>
 
   <!-- Assign Project Section -->
-  <div *ngIf="currentSection === 'assign'" class="row g-2">
+  <div *ngIf="currentSection === 'assign'" class="row g-3">
     <div class="col-md-6"><input type="text" class="form-control" placeholder="Assign to Project Manager" [(ngModel)]="assignedProject.manager"></div>
     <div class="col-md-6"><input type="text" class="form-control" placeholder="Tag HR" [(ngModel)]="assignedProject.hr"></div>
   </div>
 
+  <!-- Action Buttons -->
   <div class="d-flex justify-content-end gap-2 mt-3">
     <button class="btn btn-light border" (click)="cancel()">Cancel</button>
     <button class="btn btn-primary" (click)="goToNextSection()" *ngIf="currentSection !== 'assign'">Next</button>

@@ -3,18 +3,23 @@
     <div class="d-flex justify-content-between align-items-center mb-3">
       <div class="input-group" style="width: 300px;">
         <div class="input-group-prepend">
-          <img src="assets/search.png" alt="Search Icon" width="20" class="search-icon">
+          <i class="bi bi-search fs-4"></i>
           <input type="text" class="form-control" placeholder="Search">
         </div>
       </div>
-      <div>
-        <button class="btn btn-primary" routerLink="/header/addnewproject">
-          <img src="assets/add-circle.png" alt="Add" width="20px" class="mr-2"> Add New Project
+      <div class="d-flex gap-2">
+        <!-- Add New Project Button -->
+        <button class="btn btn-primary d-flex align-items-center gap-2" routerLink="/header/addnewproject">
+            <i class="bi bi-plus-circle fs-5"></i> 
+            <span>Add New Project</span>
         </button>
-        <button class="btn btn-light ml-2 custom-gap">
-          <img src="assets/filter.png" alt="Filter" width="20px" class="mr-2"> Filter
+
+        <!-- Filter Button -->
+        <button class="btn btn-light d-flex align-items-center gap-2">
+            <i class="bi bi-sliders"></i> 
+            <span>Filter</span>
         </button>
-      </div>
+    </div>
     </div>
   </div>
   
@@ -48,13 +53,13 @@
           </td>
           <td>
             <button class="btn btn-link p-0" (click)="onViewProject(project)">
-              <img src="assets/view.png" alt="View" width="20">
+              <i class="bi bi-eye  me-1 fs-5" style="color: black;"></i>
             </button>
             <button class="btn btn-link p-0 ml-2" (click)="onEditProject(project)">
-              <img src="assets/edit.png" alt="Edit" width="20">
+              <i class="bi bi-pencil-square  me-1 fs-5" style="color: black;"></i>
             </button>
             <button class="btn btn-link p-0 ml-2" (click)="onDeleteProject(project)">
-              <img src="assets/delete.png" alt="Delete" width="20">
+              <i class="bi bi-trash fs-5" style="color: black;"></i>
             </button>
           </td>
         </tr>
