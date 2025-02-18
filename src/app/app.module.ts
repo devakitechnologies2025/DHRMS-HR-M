@@ -21,6 +21,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { AddnewprojectComponent } from './addnewproject/addnewproject.component';
 import { HolidaysComponent } from './holidays/holidays.component';
 import { BranchComponent } from './branch/branch.component';
+import { JobsComponent } from './jobs/jobs.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { BranchComponent } from './branch/branch.component';
     AddnewprojectComponent,
     HolidaysComponent,
     BranchComponent,
+    JobsComponent,
   ],
   imports: [
     BrowserModule,

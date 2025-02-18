@@ -1,0 +1,124 @@
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3" style="padding-top: 10px;">
+      <!-- Search Input -->
+      <div class="input-group" style="width: 300px;">
+        <div class="input-group-prepend">
+          <i class="bi bi-search fs-4"></i>
+         
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+      </div>
+ 
+      <!-- Add New Job Button -->
+      <button class="btn btn-primary" (click)="addJob()">
+       <i class="bi bi-plus-circle fs-5 me-1"></i> Add New Job
+       
+      </button>
+    </div>
+ 
+    <!-- Display Table or No Data Message -->
+    <div class="row">
+      <!-- Job Categories -->
+      <div class="col-md job-category" *ngFor="let category of ['active', 'inactive', 'completed']">
+        <!-- Sticky Header -->
+        <div class="category-header ">
+          <h5 class="category-title d-flex align-items-center">
+            <span class=" mb-2  " style="margin-top: 5px;" [ngClass]="{'text-warning': category === 'active', 'text-danger': category === 'inactive', 'text-success': category === 'completed'}">
+              ●
+            </span>
+            <span class="category-text ms-1 ">{{ category | titlecase }} Jobs</span>
+          </h5>
+         
+        </div>
+ 
+        <!-- Scrollable Job List -->
+        <div class="job-list-container">
+          <ng-container *ngIf="getFilteredJobs(category).length > 0; else noData">
+            <div class="card job-card mb-3" *ngFor="let job of getFilteredJobs(category)">
+              <div class="card-body">
+                <h6 class="card-title"><i class="bi bi-briefcase fs-5"></i> {{ job.title }}</h6>
+                <p class="text-muted">{{ job.category }}</p>
+ 
+                <div>
+                  <span class="badge bg-primary me-3" *ngFor="let tag of job.tags">{{ tag }}</span>
+                </div>
+ 
+                <div class="d-flex justify-content-between align-items-center mt-2">
+                  <p class="text-muted mb-0"><i class="bi bi-geo-alt fs-5"></i> {{ job.location }}</p>
+                 <p class="mb-0"><strong>${{ job.salary }}/</strong>Month</p>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+ 
+        <!-- No Data Template (Pass category using let-category) -->
+        <ng-template #noData>
+          <p class="text-center  no-data-message" style="text-align: center;
+          font-family: Lexend;
+          font-weight: 300px;
+          font-size: 24px;
+          line-height: 22px;
+          color: #D0D9E5;
+          padding-top: 50%;">No Data to Display</p>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+ 
+ 
+  <!-- Add Job Popup (Displayed Conditionally) -->
+<div class="overlay" *ngIf="showAddJobForm">
+  <div class="add-job-form">
+      <h2>Add New Job</h2>
+      <form (ngSubmit)="closeAddJobForm()">
+          <!-- Department Selection -->
+          <div class="mb-3">
+              <label for="jobDepartment" class="form-label"></label>
+              <select class="form-control" id="jobDepartment" name="jobDepartment" required>
+                  <option value="">Select Department</option>
+                  <option *ngFor="let department of departments" [value]="department">{{ department }}</option>
+              </select>
+          </div>
+         
+          <!-- Job Title Input -->
+          <div class="mb-3">
+              <label for="jobTitle" class="form-label"></label>
+              <input type="text" class="form-control" id="jobTitle" name="jobTitle" placeholder="Enter Job Title" required />
+          </div>
+         
+          <!-- Location Selection -->
+          <div class="mb-3">
+              <label for="jobLocation" class="form-label"></label>
+              <select class="form-control" id="jobLocation" name="jobLocation" required>
+                  <option value="">Select Location</option>
+                  <option *ngFor="let location of locations" [value]="location">{{ location }}</option>
+              </select>
+          </div>
+         
+          <!-- Salary Input -->
+          <div class="mb-3">
+              <label for="jobSalary" class="form-label"></label>
+              <input type="number" class="form-control" id="jobSalary" name="jobSalary" placeholder="Enter Amount" required />
+          </div>
+         
+          <!-- Job Type Selection -->
+          <div class="mb-3">
+              <label class="form-label">Select Type</label>
+              <div class="d-flex align-items-center">
+                  <input type="radio" id="office" name="jobType" value="Office" required />
+                  <label for="office" class="ms-2 me-3">Office</label>
+                  <input type="radio" id="remote" name="jobType" value="Remote" required />
+                  <label for="remote" class="ms-2">Work from Home</label>
+              </div>
+          </div>
+         
+          <!-- Form Actions -->
+          <div class="form-actions d-flex justify-content mt-2">
+              <button type="button" class="btn btn-sm cancel-btn me-2 " (click)="closeAddJobForm()">Cancel</button>
+              <button type="submit" class="btn btn-primary add-btn ">Add</button>
+          </div>
+      </form>
+  </div>
+</div>
+ 
