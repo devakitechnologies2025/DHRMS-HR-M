@@ -106,3 +106,33 @@ thead {
   padding: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+.filter-section-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000B2; /* Blurred background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+ 
+}.filter-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  height: 500px;
+  width: 400px;
+}
+.form-control{
+  height: 40px;
+}
+.btn-danger{
+  width: 50%;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: transparent;
+}

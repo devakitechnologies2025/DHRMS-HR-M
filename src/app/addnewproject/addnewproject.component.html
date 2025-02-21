@@ -52,8 +52,18 @@
 
   <!-- Assign Project Section -->
   <div *ngIf="currentSection === 'assign'" class="row g-3">
-    <div class="col-md-6"><input type="text" class="form-control" placeholder="Assign to Project Manager" [(ngModel)]="assignedProject.manager"></div>
-    <div class="col-md-6"><input type="text" class="form-control" placeholder="Tag HR" [(ngModel)]="assignedProject.hr"></div>
+    <div class="col-md-6">
+      <select class="form-select" [(ngModel)]="assignedProject.manager">
+        <option value="" disabled selected>Assign to Project Manager</option>
+        <option *ngFor="let manager of managers" [value]="manager">{{ manager }}</option>
+      </select>
+    </div>
+    <div class="col-md-6">
+      <select class="form-select" [(ngModel)]="assignedProject.hr">
+        <option value="" disabled selected>Tag HR</option>
+        <option *ngFor="let hr of HR" [value]="HR">{{ hr }}</option>
+      </select>
+    </div>
   </div>
 
   <!-- Action Buttons -->
