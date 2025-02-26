@@ -1,0 +1,226 @@
+/* dashboard.component.css */
+.container {
+    margin-left: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Stats Container */
+.stats-container {
+  width: 1080px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  grid-template-rows: repeat(2, 1fr); /* 2 rows */
+  gap: 20px;
+  padding: 15px;
+  background: white;
+}
+
+/* Individual Stat Card */
+.stat-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  min-height: 100px;
+  border: 1px solid rgba(162, 161, 168, 0.2);
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  color: black;
+}
+
+/* Icon Container - Keep the same */
+.stat-icon-container {
+  width: 66.87306213378906;
+  height: 40;
+  top: 148px;
+  left: 356.75px;
+  border-radius: 5px;
+  padding: 20px;
+  gap: 10px;
+  background: #7152F30D;
+}
+
+/* Reduce Icon Size */
+.stat-icon {
+  color: black;
+  width: 20;
+height: 20;
+
+}
+
+
+/* Content Section */
+.stat-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding-left: 15px;
+}
+
+.stat-title {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+}
+
+/* Update Text */
+.stat-update {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: 10px;
+}
+
+/* Change Badge */
+.stat-change {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.positive {
+   background: #30BE821A;
+   color: 
+   #30BE82;
+}
+
+.negative {
+  background: #F45B691A;
+
+  color: #F45B69;
+
+}
+
+
+.attendance-data {
+  margin-top: 2%;
+  width: 1080px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  position: relative; /* Ensures it appears below */
+} 
+
+.stat-card i {
+    font-size: 2rem;
+    color: #007bff; /* Icon color */
+    margin-bottom: 10px;
+  }
+  
+  .stat-card h5 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .stat-card p {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  .stat-card span {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .text-success {
+    color: green;
+  }
+  
+  .text-danger {
+    color: red;
+  }
+  
+
+/* Attendance Heading */
+.attendance-overview h4 {
+    margin-bottom: 15%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+
+
+/* Canvas Styling */
+.attendance-overview canvas {
+    max-height: 300px;
+    width: 100%;
+    background: transparent;
+}
+
+.attendance-overview-container {
+    width: 1080px; /* Same as other sections */
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+
+  /* Header Styling */
+.attendance-overview-container .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .header h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .attendance-filter {
+    padding: 8px 12px;
+    color: black;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: 5%;
+  }
+  
+  canvas {
+    width: 100%;
+    max-height: 300px;
+    border-radius: 8px;
+  }
+  
+  .attendance-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .attendance-header h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .attendance-header button {
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  

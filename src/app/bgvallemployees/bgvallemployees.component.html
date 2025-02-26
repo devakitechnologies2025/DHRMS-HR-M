@@ -1,0 +1,199 @@
+<body>
+  <div class="header">
+    <div class="search-container">
+      <i class="bi bi-search search-icon"></i> <!-- Bootstrap Search Icon -->
+      <input type="text" class="search-box" placeholder="Search">
+    </div>
+    <div class="button-group">
+      <button class="add-new bgv" (click)="navigateToBGV()">
+        <i class="bi bi-plus-circle me-2"></i> Add New BGV
+      </button>
+
+   <!-- Filter Button -->
+<button class="btn btn-secondary" (click)="toggleFilterSection()">
+  <i class="bi bi-sliders2 me-2"></i> Filter
+</button>
+
+    </div>
+  </div>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Candidate Name</th>
+          <th>Mobile Number</th>
+          <th>Email ID</th>
+          <th>Company</th>
+          <th>Approved</th>
+          <th>Pending</th>
+          <th>Rejected</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let candidate of candidates">
+          <td>
+            <div class="candidate">
+              <img [src]="candidate.image" alt="Profile">
+              <span>{{ candidate.name }}</span>
+            </div>
+          </td>
+          <td>{{ candidate.mobile }}</td>
+          <td>{{ candidate.email }}</td>
+          <td>{{ candidate.company }}</td>
+
+          <!-- Approved Status -->
+          <td>
+            <span *ngIf="candidate.status.approved; else emptyCircle" class="status green"></span>
+            <ng-template #emptyCircle>
+              <span class="status grey"></span>
+            </ng-template>
+          </td>
+
+          <!-- Pending Status -->
+          <td>
+            <span *ngIf="candidate.status.pending; else emptyCircle" class="status yellow"></span>
+          </td>
+
+          <!-- Rejected Status -->
+          <td>
+            <span *ngIf="candidate.status.rejected; else emptyCircle" class="status red"></span>
+          </td>
+
+          <td class="actions">
+            <i class="bi bi-eye" (click)="viewCandidate(candidate)"></i>
+            <i class="bi bi-pencil" (click)="setEditCandidate(candidate)"></i>
+            <i class="bi bi-trash" (click)="confirmDelete(candidate)"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- Candidate Details Modal -->
+  <div class="modal" *ngIf="selectedCandidate">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <h2>{{ isEditing ? 'Edit Candidate' : 'Candidate Details' }}</h2>
+
+      <!-- View Candidate -->
+      <div *ngIf="!isEditing">
+        <p><strong>Name:</strong> {{ selectedCandidate.name }}</p>
+        <p><strong>Mobile:</strong> {{ selectedCandidate.mobile }}</p>
+        <p><strong>Email:</strong> {{ selectedCandidate.email }}</p>
+        <p><strong>Company:</strong> {{ selectedCandidate.company }}</p>
+      </div>
+
+      <!-- Edit Candidate -->
+<!-- Edit Candidate -->
+<div *ngIf="isEditing" class="edit-container">
+  <label>Name:</label>
+  <input type="text" [(ngModel)]="selectedCandidate.name" class="input-field">
+  
+  <label>Mobile:</label>
+  <input type="text" [(ngModel)]="selectedCandidate.mobile" class="input-field">
+  
+  <label>Email:</label>
+  <input type="text" [(ngModel)]="selectedCandidate.email" class="input-field">
+  
+  <label>Company:</label>
+  <input type="text" [(ngModel)]="selectedCandidate.company" class="input-field">
+  
+  <div class="modal-actions">
+    <button class="btn btn-danger" (click)="resetEmployeeData()">Reset</button>
+    <button class="btn btn-primary" (click)="saveEmployeeData()">Save</button>
+  </div>
+</div>
+    </div>
+
+
+  <!-- Delete Confirmation Modal -->
+  <div class="modal" *ngIf="candidateToDelete">
+    <div class="modal-content">
+      <span class="close" (click)="closeDeleteModal()">&times;</span>
+      <h3>Are you sure you want to delete {{ candidateToDelete.name }}?</h3>
+      <button (click)="deleteCandidate()">Yes</button>
+      <button (click)="closeDeleteModal()">No</button>
+    </div>
+  </div>
+
+ <!-- ✅ Filter Modal -->
+ <div *ngIf="showFilterSection" class="filter-section-modal">
+  <div class="filter-container">
+    <h4>Filter</h4>
+
+    <!-- Search Input -->
+    <div class="mb-3 position-relative">
+      <i class="bi bi-search position-absolute search-icon"></i>
+      <input type="text" class="form-control search-input" placeholder="Search by Name or ID..." />
+    </div>
+
+    <!-- Verification Status -->
+    <div class="mb-3">
+      <label><strong>Verification Status</strong></label>
+      <div *ngFor="let status of verificationStatus" class="form-check">
+        <input 
+          type="checkbox" 
+          [id]="status" 
+          [value]="status"
+          (change)="toggleVerificationStatus(status)"
+          [checked]="selectedVerificationStatus.includes(status)"
+          class="form-check-input"
+        />
+        <label [for]="status" class="form-check-label">{{ status }}</label>
+      </div>
+    </div>
+
+    <!-- Verification Categories -->
+    <div class="mb-3">
+      <label><strong>Verification Categories</strong></label>
+      <div *ngFor="let category of verificationCategories; let i = index" class="form-check">
+        <input 
+          type="radio" 
+          class="form-check-input rounded-radio"
+          [id]="'category' + i"
+          name="verificationCategory" 
+          [value]="category"
+          [checked]="selectedVerificationCategory === category"
+          (change)="selectVerificationCategory(category)"
+        />
+        <label class="form-check-label" [for]="'category' + i">{{ category }}</label>
+      </div>
+    </div>
+
+    <!-- Verification Outcome -->
+    <div class="mb-3">
+      <label><strong>Verification Outcome</strong></label>
+      <div *ngFor="let outcome of verificationOutcome" class="form-check">
+        <input 
+          type="checkbox" 
+          [id]="outcome" 
+          [value]="outcome"
+          (change)="toggleVerificationOutcome(outcome)"
+          [checked]="selectedVerificationOutcome.includes(outcome)"
+          class="form-check-input"
+        />
+        <label [for]="outcome" class="form-check-label">{{ outcome }}</label>
+      </div>
+    </div>
+
+    <!-- Timeframe of Verification -->
+    <div class="mb-3">
+      <label><strong>Timeframe of Verification</strong></label>
+      <select class="form-control" [(ngModel)]="selectedTimeframe">
+        <option *ngFor="let timeframe of timeframeOfVerification" [value]="timeframe">
+          {{ timeframe }}
+        </option>
+      </select>
+    </div>
+
+    <!-- Buttons -->
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-danger" (click)="cancelFilters()">Cancel</button>
+      <button class="btn btn-primary ms-2" (click)="applyFilters()">Apply</button>
+    </div>
+  </div>
+</div>
+
+  </div>
+ 
+</body>

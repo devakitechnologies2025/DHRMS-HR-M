@@ -1,0 +1,71 @@
+<div class="container">
+    <!-- Stats Section -->
+    <div class="stats-container">
+      <div class="stat-card" *ngFor="let stat of stats">
+        <div class="stat-icon-container">
+          <i class="bi" [ngClass]="stat.icon"></i> <!-- Bootstrap Icon -->
+        </div>
+        <div class="stat-content">
+          <span class="stat-title">{{ stat.title }}</span>
+          <span class="stat-value">{{ stat.value }}</span>
+          <span class="stat-update">Update: Nov 24, 2024</span>
+        </div>
+        <div class="stat-change" [ngClass]="{'positive': stat.change > 0, 'negative': stat.change < 0}">
+          {{ stat.change > 0 ? '+' : '' }}{{ stat.change }}%
+        </div>
+      </div>
+    </div>
+
+    <!-- Attendance Overview Chart -->
+    <div class="attendance-overview-container">
+        <div class="header">
+          <h4>Attendance Overview</h4>
+          <select class="attendance-filter" [(ngModel)]="selectedFilter" (change)="updateChartData()">
+            <option value="today">Today</option>
+            <option value="yesterday">Yesterday</option>
+            <option value="last7days">Last 7 Days</option>
+            <option value="last30days">Last 30 Days</option>
+          </select>
+          
+        </div>
+        <canvas #attendanceChart></canvas>
+      </div>
+      
+<!-- Attendance Data Table -->
+<div class="attendance-data">
+    <div class="attendance-header">
+      <h4>Attendance Details</h4>
+      <button class="btn btn-primary" (click)="toggleAttendanceView()">
+        {{ showAllAttendance ? 'Show Less' : 'View All' }}
+      </button>
+    </div>
+  
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Designation</th>
+          <th>Type</th>
+          <th>Check-In</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of displayedAttendanceData">
+          <td>{{ data.name }}</td>
+          <td>{{ data.designation }}</td>
+          <td>{{ data.type }}</td>
+          <td>{{ data.checkIn }}</td>
+          <td [class.text-success]="data.status === 'On Time'" [class.text-danger]="data.status === 'Late'">
+            {{ data.status }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+   <!-- Redirect Button -->
+   <div class="redirect-button-container" style="text-align: center; margin-top: 20px; margin-left: 70%;">
+    <button class="btn btn-secondary" (click)="redirectToMainPage()">Main Page</button>
+</div>
+
+</div>

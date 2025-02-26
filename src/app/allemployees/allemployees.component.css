@@ -1,0 +1,543 @@
+/* General Body Styling */
+body {
+  width: 100%;
+  max-width: 1080px;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+
+}
+
+/* General Table Styling */
+.table {
+  margin-top: 5%;
+  border-collapse: collapse;
+  width: 80%;
+  margin-left: 19%;
+  background: white;
+}
+
+/* Table Actions (Search, Add Employee, Filter Buttons) */
+.table-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+/* Search Bar */
+.search-container {
+  position: relative;
+  width: 300px;
+}
+
+.search-bar {
+  padding: 10px 40px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid white;
+  background: white;
+}
+
+/* Employee Table Container */
+.employee-table-container {
+  width: 100%;
+  overflow-x: auto;
+  background: white;
+  margin-top: -2%;
+}
+
+/* Remove All Borders & Lines */
+.table th, .table td {
+  border: none !important;
+  padding: 10px;
+  background: white !important;
+  color: black;
+}
+
+/* Table Header Styling */
+.table thead {
+  background: white;
+}
+
+.table th {
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+}
+
+/* Table Cells */
+.table td {
+  font-size: 14px;
+  background: white !important;
+}
+
+/* Remove Zebra Striping */
+.table tbody tr {
+  background-color: white !important;
+}
+
+/* Remove Table Row Hover Effect */
+.table tbody tr:hover {
+  background-color: white !important;
+}
+
+/* Status Buttons */
+.btn-status {
+  width: 80px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+/* "Yes" Button Styling */
+.btn-success {
+  background: #30BE821A !important; /* Light green background */
+  color: #30BE82 !important; /* Dark green text */
+  border: none;
+}
+
+/* "No" Button Styling */
+.btn-danger {
+  background: #F45B691A !important; /* Light red background */
+  color: #F45B69 !important; /* Dark red text */
+  border: none;
+}
+
+
+/* Action Buttons */
+.actions-column button {
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+/* Pagination */
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  background: white;
+}
+
+.pagination button {
+  border: none;
+  background: white;
+  font-size: 18px;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+  .table th, .table td {
+    padding: 8px;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .table-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .search-container {
+    width: 100%;
+  }
+
+  .pagination-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Button Container Styling */
+.table th .d-flex.justify-content-between {
+  gap: 15px; /* Adds space between the elements */
+}
+
+/* Space between "Add Employee" and "Filter" buttons */
+.table th .d-flex div {
+  display: flex;
+  gap: 10px; /* Adjust the gap between buttons */
+}
+.btn-trash{
+  background-color: black;
+}
+/* Ensure only the Filter button has a white background */
+.btn-secondary {
+  background-color: white !important;
+  color: black !important;
+  border: 1px solid #ccc !important; /* Light border for better visibility */
+}
+
+.btn-secondary:hover {
+  background-color: #f8f9fa !important; /* Slightly darker white on hover */
+}
+.bottom-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  width: 100%;
+  background: white;
+}
+
+.showing-text {
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 20%;
+
+}
+
+.dropdown {
+  margin-right: 10px;
+}
+
+.records-range {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.pagination-controls button {
+  border: none;
+  background: white;
+  font-size: 18px;
+  padding: 5px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000B2; /* Blurred background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.add-holiday-form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 380px;
+  height: 330px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.add-holiday-form h2 {
+  font-size: 20px;
+  font-family: lexend;
+  /* margin-bottom: 20px; */
+}
+
+.add-holiday-form input {
+  margin-top: 10px;
+  width: 330px;
+  height: 45px;
+  box-shadow: none;
+  font-size: 18px;
+  font-family: lexend;
+}
+
+.cancel-btn,
+.add-btn {
+  width: 140px;
+  height: 40px;
+  margin-top: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.cancel-btn {
+  border: 1px solid #A2A1A833;
+  color: #16151C;
+  background-color: transparent;
+}
+
+.add-btn {
+  background-color: #3F8CFF;
+  color: white;
+  border: none;
+}
+
+/* Blurred Background */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 999;
+}
+
+/* Filter Modal */
+.filter-section-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000B2; /* Blurred background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.filter-container{
+  background-color: white;
+  height: 600px;
+  width: 400px;
+  border-radius: 10px;
+  border: 1px solid burlywood;
+  padding: 15px;
+}
+
+/* Optional: Prevent scrolling when filter is open */
+
+  body.modal-open {
+    overflow: hidden; /* Prevent scrolling */
+    backdrop-filter: blur(5px); /* Apply blur effect */
+  }
+
+.department-btn {
+  padding: 8px 12px;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.department-btn.selected {
+  background-color: #007bff;
+  color: white;
+  border: 1px solid #007bff;
+}
+
+/* Search Icon inside Search Box */
+.search-box {
+  position: relative;
+}
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+.search-input {
+  padding-left: 30px;
+}
+
+/* Rounded Checkboxes */
+.rounded-checkbox {
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+}
+
+/* Rounded Radio Buttons */
+.rounded-radio {
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+}
+
+/* Ensure all table headers and cells have a white background */
+.table th, 
+.table td, 
+.table thead tr, 
+.table tbody tr {
+  background-color: white !important;
+}
+/* Override Bootstrap zebra striping */
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: white !important;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+  background-color: white !important;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Adjust opacity */
+  backdrop-filter: blur(8px); /* Blur effect */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+
+/* Modal Content */
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  text-align:justify;
+  position: relative;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1001; /* Ensure it's above the backdrop */
+  
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Employee Info Input Fields */
+.employee-info input,
+.employee-info select {
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Modal Actions */
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.modal-actions button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-actions .btn-danger {
+  background: red;
+  color: white;
+}
+
+.modal-actions .btn-primary {
+  background: blue;
+  color: white;
+}
+
+
+/* Employee Info */
+.employee-info p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+/* Employee Image Styling */
+.candidate {
+  display: flex;
+  align-items: center;
+}
+
+.candidate img {
+  width: 30px; /* Adjust size as needed */
+  height: 30px;
+  border-radius: 50%; /* Makes the image circular */
+  margin-right: 8px;
+  object-fit: cover; /* Ensures the image is cropped properly */
+  border: 2px solid #ddd; /* Optional: Adds a border */
+}
+
+.employee-detail-img {
+  width: 80px; /* Larger image for details modal */
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 10px auto;
+}
+.employee-thumbnail {
+  width: 40px; /* Adjust size */
+  height: 40px;
+  border-radius: 50%; /* Makes it circular */
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.emp {
+  display: flex;
+  align-items: center;
+}
+
+/* Modal Backdrop (Blur Effect) */
+#backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3); /* Transparent dark overlay */
+  backdrop-filter: blur(8px); /* Blur effect */
+  display: none; /* Hidden by default */
+  z-index: 998;
+}
+
+/* Modal Styling */
+#modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  display: none; /* Hidden by default */
+  z-index: 999;
+}
+
+/* When Modal is Active */
+.modal-active #backdrop {
+  display: block;
+}
+
+.modal-active #modal {
+  display: block;
+}
+
+.department-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 5 columns */
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}

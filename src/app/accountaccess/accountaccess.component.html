@@ -1,0 +1,76 @@
+<body>
+    <div class="page-container">
+        <div class="navigation">
+            <div class="nav-item" (click)="showForm('personal-info')">
+                <i class="bi bi-person-fill"></i> Personal Information
+            </div>
+            <div class="nav-item" (click)="showForm('professional-info')">
+                <i class="bi bi-briefcase-fill"></i> Professional Information
+            </div>
+            <div class="nav-item" (click)="showForm('documents')">
+                <i class="bi bi-file-earmark-text-fill"></i> Documents
+            </div>
+            <div class="nav-item active" (click)="showForm('account-access')">
+                <i class="bi bi-key-fill"></i> Account Access
+            </div>
+        </div>
+
+        <div id="account-access" class="form-container active">
+            <form>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" [(ngModel)]="employeeData.email" name="email" placeholder="Enter Email Address">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" [(ngModel)]="employeeData.teamsId" name="teamsId" placeholder="Enter Team ID">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="tel" [(ngModel)]="employeeData.skypeId" name="skypeId" placeholder="Enter Skype ID">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" [(ngModel)]="employeeData.githubId" name="githubId" placeholder="Enter Github ID">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <select [(ngModel)]="employeeData.taghr" name="taghr">
+                            <option value="" disabled selected>Tag HR</option>
+                            <option value="John Doe">John Doe</option>
+                            <option value="Jane Smith">Jane Smith</option>
+                            <option value="Emily Davis">Emily Davis</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select [(ngModel)]="employeeData.reportingmanager" name="reportingmanager">
+                            <option value="" disabled selected>Reporting Manager</option>
+                            <option value="Michael Scott">Michael Scott</option>
+                            <option value="Dwight Schrute">Dwight Schrute</option>
+                            <option value="Jim Halpert">Jim Halpert</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <select [(ngModel)]="employeeData.assignproject" name="assignproject">
+                            <option value="" disabled selected>Assign Project</option>
+                            <option value="Project Alpha">Project Alpha</option>
+                            <option value="Project Beta">Project Beta</option>
+                            <option value="Project Gamma">Project Gamma</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <button type="button" class="cancel" (click)="cancel()">Cancel</button>
+
+                    <button type="button" class="next" (click)="save()">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
