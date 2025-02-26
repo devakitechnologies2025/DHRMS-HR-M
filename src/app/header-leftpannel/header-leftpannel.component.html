@@ -14,7 +14,7 @@
                         <i class="bi bi-grid me-2"></i>Dashboard
                     </a>
                     <a class="nav-link example-btn" [ngClass]="{'active': activeButton === 'employees'}" 
-                        (click)="setActiveButton('employees')" routerLink="/header/all-employees">
+                        (click)="setActiveButton('employees')" routerLink="/header/allemp">
                         <i class="bi bi-people me-2"></i> All Employees
                     </a>
                     <a class="nav-link example-btn" [ngClass]="{'active': activeButton === 'departments'}" 
@@ -87,7 +87,7 @@
                         <span class="emp-name">{{username}}</span>
                         <span class="emp-designation">HR Manager</span>
                     </div>
-                    <a class="logout-symbol ms-2" (click)="toggleLogoutMenu()" [class.rotated]="isMenuVisible">&#94;</a>
+                    <i class="bi bi-chevron-down ms-2 toggle-icon" (click)="toggleLogoutMenu()"></i>
                     <div class="logout-menu" *ngIf="isMenuVisible">
                         <button class="btn btn-danger logout-btn" (click)="logout()">Logout</button>
                     </div>

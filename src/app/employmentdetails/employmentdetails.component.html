@@ -1,0 +1,86 @@
+<div class="employment-container">
+    <!-- Navigation Tabs -->
+    <div class="navigation">
+        <div class="nav-item" (click)="showForm('personal-info')">
+            <i class="bi bi-person-fill"></i> Personal Information
+        </div>
+        <div class="nav-item " (click)="showForm('educationaldetails')">
+            <i class="bi bi-briefcase-fill"></i> Educational Details
+        </div>
+        <div class="nav-item active" (click)="showForm('documents')">
+            <i class="bi bi-file-earmark-text-fill"></i> Employment Details
+        </div>
+    </div>
+
+    <div class="checkbox-container">
+        <div class="checkbox-item">
+            <input type="checkbox" id="fresher" [(ngModel)]="isFresher">
+            <label for="fresher"> Fresher (Not required to fill this section)</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox" id="experienced" [(ngModel)]="isExperienced">
+            <label for="experienced"> Experienced (Please fill this section as instructed below)</label>
+        </div>
+    </div>
+
+    <div *ngIf="isExperienced">
+        <div *ngFor="let employment of employmentList; let i = index" class="employment-form">
+            <h4>Employer {{ i + 1 }}</h4>
+
+            <div class="grid-container">
+                <input type="text" [(ngModel)]="employment.companyName" placeholder="Company Name">
+                <input type="text" [(ngModel)]="employment.address" placeholder="Address Line">
+                <input type="text" [(ngModel)]="employment.city" placeholder="City">
+                <input type="text" [(ngModel)]="employment.postalCode" placeholder="Postal Code">
+                <input type="text" [(ngModel)]="employment.state" placeholder="State">
+                <input type="text" [(ngModel)]="employment.phone" placeholder="Company Phone No">
+
+                <!-- Dropdown for Company Website -->
+                <select [(ngModel)]="employment.website">
+                    <option value="" disabled selected>Company Website</option>
+                    <option value="https://www.tcs.com">TCS</option>
+                    <option value="https://www.infosys.com">Infosys</option>
+                    <option value="https://www.wipro.com">Wipro</option>
+                    <option value="https://www.accenture.com">Accenture</option>
+                    <option value="https://www.capgemini.com">Capgemini</option>
+                </select>
+
+                <!-- Dropdown for Designation (Replaces Department) -->
+                <select [(ngModel)]="employment.designation">
+                    <option value="" disabled selected>Designation</option>
+                    <option value="Software Engineer">Software Engineer</option>
+                    <option value="Senior Software Engineer">Senior Software Engineer</option>
+                    <option value="Team Lead">Team Lead</option>
+                    <option value="Project Manager">Project Manager</option>
+                    <option value="Technical Architect">Technical Architect</option>
+                    <option value="Business Analyst">Business Analyst</option>
+                    <option value="HR Manager">HR Manager</option>
+                </select>
+
+                <input type="text" [(ngModel)]="employment.supervisor" placeholder="Supervisor’s Designation">
+                <input type="text" [(ngModel)]="employment.salary" placeholder="Remuneration (CTC-PA)">
+                <input type="text" [(ngModel)]="employment.employeeId" placeholder="Employee ID">
+                <input type="date" [(ngModel)]="employment.joiningDate" placeholder="Date of Joining">
+                <input type="date" [(ngModel)]="employment.exitDate" placeholder="Date of Exit">
+                <input type="text" [(ngModel)]="employment.reasonForLeaving" placeholder="Reason for Leaving">
+                <input type="text" [(ngModel)]="employment.employmentType" placeholder="Employment Type">
+
+                <select [(ngModel)]="employment.natureOfEmployment">
+                    <option value="" disabled selected>Nature of Employment</option>
+                    <option value="Full-time">Full-time</option>
+                    <option value="Part-time">Part-time</option>
+                    <option value="Internship">Internship</option>
+                    <option value="Contract">Contract</option>
+                </select>
+            </div>
+
+        </div>
+
+        <button class="add-employment" (click)="addEmployment()">+ Add Employment</button>
+    </div>
+
+    <div class="button-container">
+        <button type="button" class="cancel" (click)="handleCancel()">Cancel</button>
+        <button type="submit" class="submit" (click)="handleSave()">Save</button>
+    </div>
+</div>

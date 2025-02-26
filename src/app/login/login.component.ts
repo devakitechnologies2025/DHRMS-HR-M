@@ -50,7 +50,7 @@ export class LoginComponent {
 
     // Check if email and password match
     if (this.email === 'test@example.com' && this.password === 'Test@12345') {
-      this.router.navigate(['/header']);
+      this.router.navigate(['/mainpage']);
     } else {
       this.errorMessage = 'Incorrect email or password';
     }

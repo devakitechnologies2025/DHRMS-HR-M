@@ -1,0 +1,242 @@
+.body {
+    margin-top: 20%;
+    font-family: 'Lexend', sans-serif;
+}
+
+.cards-container {   
+    margin-top: 50px;
+    /* border: 1px solid rgb(232, 224, 224);  */
+    margin-right: 150px; /* Centers container horizontally */
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Creates 5 equal columns */
+    gap: 30px; /* Adds some space between the cards */
+    grid-template-rows: auto auto ; /* Creates 2 rows */
+    width: 254;
+    height: 155;
+    
+}
+
+.card-link {
+    text-decoration: none; /* Removes underline from the link */
+    display: block;        /* Ensures the link spans the entire card */
+    color: inherit;        /* Keeps the text color unchanged */
+}
+
+ 
+.card1, .card2, .card3, .card4, .card5, .card6 {
+    
+    height: 155px;
+    width: 234px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    text-align: start;
+}
+.container {
+    padding: 20px 16px;  /* Add padding-top to move the text down */
+    position: relative;
+    top: 35px; /* Adjust top value as per your need */
+    color: #F0F0F0;
+}
+
+.card1 .container {
+    display: flex;
+    align-items: end; /* Align items vertically */
+    gap: 10px; /* Space between icon and text */
+    padding: 2px 16px;
+    margin-right: 5%;
+}
+
+.cards-container .container {
+    display: flex;
+    align-items: center; /* Align text and image vertically */
+    justify-content: space-between; /* Create space between text and image*/
+    padding: 10px 16px; /* Add some padding */
+}
+
+h1 {
+    
+    font-size: 25px; /* Adjust the font size as needed */
+    margin: 0; /* Remove default margins */
+}
+
+.icon {
+    margin-right: 20px;
+    width: 50px; /* Set icon width */
+    height: 44px; /* Set icon height */
+}
+h1, .icon{
+    margin-top: 5px;
+}
+
+
+.card1, .card2, .card3, .card4 , .card5 {
+    margin-top: 30px; /* Adjust this value to your desired top margin */
+}
+.card1:hover, .card2:hover, .card3:hover, .card4:hover, .card5:hover, .card6:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.card1{
+    margin-left: 20px;
+}
+
+
+.card6{
+        margin-bottom: 55%;
+        background: yellow;
+        grid-column: span 5;
+        margin-left: 5%;
+    
+}
+
+.container {
+    padding: 2px 16px;
+}
+
+/* Specific styles for individual cards (if needed) */
+.card1 { background: linear-gradient(107.33deg, #007BFF 1.06%, rgba(0, 255, 121, 0) 103.76%);}
+.card2 {background: linear-gradient(107.33deg, #FF5C00 1.06%, rgba(0, 255, 121, 0) 103.76%) }
+.card3 {background: linear-gradient(107.33deg, #002855 1.06%, rgba(0, 255, 121, 0) 103.76%) }
+.card4 {background: linear-gradient(107.33deg, #77DD77 1.06%, rgba(0, 255, 121, 0) 103.76%)}
+.card5{background: linear-gradient(107.33deg, #F45B69 1.06%, rgba(244, 91, 105, 0) 103.76%)}
+.card6 {background: linear-gradient(107.33deg, #FFC107 1.06%, rgba(0, 255, 121, 0) 103.76%)}
+
+/* Header Styling */
+.header {
+    width: 100%;
+    height: 70px;
+    margin-top: 20px;
+    display: flex;
+
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+
+
+.username {
+    font-size: 20px;
+    font-weight: 800;
+    display: flex;
+    flex-direction: column;
+}
+
+.greeting-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Search Bar */
+.search-container {
+    position: relative;
+}
+
+.bi-search {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.search-input {
+    padding-left: 45px; /* Increased padding to move the placeholder to the right */
+    height: 45px; /* Adjust as needed */
+    width: 350px; /* Adjust width as needed */
+    box-shadow: none;
+    border-radius: 10px;
+}
+.bi-bell {
+
+    width: 30px;
+    height: 40px;
+    background: #f8f8f8;
+    border-radius: 5px;
+
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Employee Info */
+.employee-info {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.emp-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    margin-right: 3px;
+}
+
+.emp-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.emp-name {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.emp-designation {
+    font-size: 14px;
+    color: #777;
+}
+
+
+
+.toggle-icon {
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.toggle-icon.rotated {
+    transform: rotate(180deg);
+}
+
+.logout-menu {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.company-logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Move logo and text to the left */
+    position: absolute;
+    left: 0; /* Aligns to the leftmost edge */
+    padding: 10px 20px;
+}
+
+.logo {
+    width: 40px; /* Adjust size as needed */
+    height: 40px;
+    margin-right: 10px; /* Space between logo and text */
+}
+
+.hrms-text {
+    font-weight: bold;
+    font-size: 20px;
+    color: blue;
+}

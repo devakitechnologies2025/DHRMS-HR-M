@@ -91,26 +91,26 @@
     color: #777;
 }
 
-.logout-symbol {
+.toggle-icon {
+    font-size: 20px;
     cursor: pointer;
-    font-size: 30px;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease;
 }
 
-.logout-symbol.rotated {
+.toggle-icon.rotated {
     transform: rotate(180deg);
 }
 
 .logout-menu {
-    
     position: absolute;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 5px;
-    top: 100px;
+    top: 50px;
     right: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Left Panel */

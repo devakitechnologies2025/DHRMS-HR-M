@@ -6,7 +6,7 @@ import Chart from 'chart.js/auto';
   selector: 'app-dashboard',
   standalone: false,
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css'] 
+  styleUrls: ['./dashboard.component.css'] // ✅ Fixed
 })
 export class DashboardComponent implements AfterViewInit {
 

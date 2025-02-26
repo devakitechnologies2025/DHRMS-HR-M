@@ -1,0 +1,127 @@
+<body>
+  <div class="page-container">
+    <!-- Navigation Section -->
+    <div class="navigation">
+      <div class="nav-item" onclick="showForm('personalinfo')">
+        <i class="bi bi-person-fill"></i> Personal Information
+      </div>
+      <div class="nav-item active" onclick="showForm('professionalinfo')">
+        <i class="bi bi-briefcase-fill"></i> ProfessionalInformation
+      </div>
+      <div class="nav-item" onclick="showForm('documents')">
+        <i class="bi bi-file-earmark-text-fill"></i> Documents
+      </div>
+      <div class="nav-item" onclick="showForm('account-access')">
+        <i class="bi bi-key-fill"></i> Account Access
+      </div>
+    </div>
+
+    <!-- Professional Info Form -->
+    <div id="professional-info" class="form-container active">
+      <form>
+        <div class="form-grid">
+          <!-- Employee ID and Username -->
+          <div class="form-item">
+            <input
+              type="text"
+              id="employeeId"
+              name="employeeId"
+              placeholder="Employee ID"
+              required
+            />
+          </div>
+          <div class="form-item">
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Username"
+            />
+          </div>
+
+          <!-- Employee Type and Email -->
+          <div class="form-item">
+            <select id="employeeType" name="employeeType">
+              <option value="" disabled selected>Select Employee Type</option>
+              <option value="fulltime">Full-Time</option>
+              <option value="parttime">Part-Time</option>
+              <option value="contract">Contract</option>
+            </select>
+          </div>
+          <div class="form-item">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email Address"
+            />
+          </div>
+
+          <!-- Department and Designation -->
+          <div class="form-item">
+            <select id="department" name="department">
+              <option value="" disabled selected>Select Department</option>
+              <option value="hr">HR</option>
+              <option value="engineering">Engineering</option>
+              <option value="marketing">Marketing</option>
+            </select>
+          </div>
+          <div class="form-item">
+            <select id="designation" name="designation">
+              <option value="" disabled selected>Select Designation</option>
+              <option value="manager">Manager</option>
+              <option value="developer">Developer</option>
+              <option value="analyst">Analyst</option>
+            </select>
+          </div>
+
+          <!-- Working Days -->
+          <div class="form-item">
+            <select id="workingDays" name="workingDays">
+              <option value="" disabled selected>Select Working Days</option>
+              <option value="5">5 Days (Mon-Fri)</option>
+              <option value="6">6 Days (Mon-Sat)</option>
+              <option value="4">4 Days (Flexible)</option>
+              <option value="shift">Shift-based</option>
+            </select>
+          </div>
+
+          <!-- Joining Date -->
+          <div class="form-item">
+            <div class="form-group date-input-container" style="position: relative;">
+                <input
+                    type="date"
+                    id="joiningDate"
+                    class="joiningDate-input"
+                    placeholder=" "
+                    required
+                />
+                <label for="joiningDate" class="joiningDate-label">Date of Joining</label>
+            </div>
+        </div>
+        
+
+          <!-- Office Location -->
+          <div class="form-item full-width">
+            <label for="officeLocation"></label>
+            <select id="officeLocation" name="officeLocation">
+              <option value="" disabled selected>Select Office Location</option>
+              <option value="hyderabad">Hyderabad</option>
+              <option value="bangalore">Bangalore</option>
+              <option value="chennai">Chennai</option>
+              <option value="mumbai">Mumbai</option>
+              <option value="delhi">Delhi</option>
+            </select>            
+          </div>
+        </div>
+
+        <!-- Modal Actions -->
+        <div class="modal-actions">
+          <button type="button" class="cancel" (click)="cancel()">Cancel</button>
+           
+          <button type="button" class="next" (click)="goToNextSection()">Next</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
