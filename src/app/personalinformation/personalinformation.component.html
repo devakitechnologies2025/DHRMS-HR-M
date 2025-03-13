@@ -1,0 +1,113 @@
+
+    <div class="page-container">
+        <div class="navigation">
+            <div class="nav-item active" onclick="showForm('personal-info')">
+                <i class="bi bi-person-fill"></i> Personal Information
+            </div>
+            <div class="nav-item" onclick="showForm('professional-info')">
+                <i class="bi bi-briefcase-fill"></i> Professional Information
+            </div>
+            <div class="nav-item" onclick="showForm('documents')">
+                <i class="bi bi-file-earmark-text-fill"></i> Documents
+            </div>
+            <div class="nav-item" onclick="showForm('account-access')">
+                <i class="bi bi-key-fill"></i> Account Access
+            </div>
+        </div>
+
+        <div id="personal-info" class="form-container active">
+            <form>
+                <div class="photo-upload">
+                    <label for="photo-input" class="photo-label">
+                        <i class="bi bi-camera-fill"></i>
+                        <input type="file" id="photo-input" accept="image/*" hidden />
+                    </label>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" id="first-name" placeholder="Enter First Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="last-name" placeholder="Enter Last Name">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="tel" id="mobile-number" placeholder="Enter Mobile Number">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email-address" placeholder="Enter Email Address">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group date-input-container">
+                        <input type="date" id="dob" class="dob-input" placeholder=" ">
+                        <label for="dob" class="dob-label">Date of Birth </label>
+                    </div>
+
+                    <div class="form-group">
+                        <select id="marital-status">
+                            <option value="">Marital Status</option>
+                            <option value="married">Married</option>
+                            <option value="unmarried">Unmarried</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <select id="gender">
+                            <option value="">Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select id="nationality">
+                            <option value="">Nationality</option>
+                            <option value="indian">Indian</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group address">
+                    <textarea id="address" placeholder="Enter Address"></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <select id="city">
+                            <option value="">Select City</option>
+                            <!-- Add city options here -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select id="state">
+                            <option value="">Select State</option>
+                            <!-- Add state options here -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select id="zip-code">
+                            <option value="">Select Zip Code</option>
+                            <!-- Add zip code options here -->
+                        </select>
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <button type="button" class="cancel" (click)="cancel()">Cancel</button>
+
+                    <button type="button" class="next" (click)="goToNextSection()">Next</button>
+
+                </div>
+                
+                
+            </form>
+        </div>
+    </div>

@@ -1,0 +1,357 @@
+.body{
+    font-family: lexend;
+}
+
+.table-container {
+    width: 80%;
+    overflow-x: auto;
+    margin-left:20%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.candidate {
+    display: flex;
+    align-items: center;
+}
+
+.candidate img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.status {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.status.green {
+    background-color: green;
+}
+
+.status.yellow {
+    background-color: yellow;
+}
+
+.status.red {
+    background-color: red;
+}
+
+.status.grey {  /* Empty circle */
+    background-color: transparent;
+    border: 1px solid grey;
+}
+
+.actions i {
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.page-container {
+    margin-top: 5%;
+    border: 1px solid #ccc;
+    height: auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    margin-left: 20%;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+.nav-item {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    font-family: 'Lexend', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.nav-item.active {
+    color: #3F8CFF;
+    text-decoration: underline;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-radius: 10px;
+    width: 80%;
+    margin-left: 19%;
+    margin-top: 2%;
+}
+
+/* Ensures search box stays at flex-start */
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;  /* Makes search box take up available space */
+    max-width: 300px; /* Limits max width */
+}
+
+.search-box {
+    padding: 10px 40px; /* Extra left padding for icon */
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+/* Button group sticks to flex-end */
+.button-group {
+    display: flex;
+    gap: 15px; /* Adds spacing between buttons */
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Blue button */
+.add-new.bgv {
+    background-color: #007BFF;
+    color: white;
+}
+
+.add-new.bgv:hover {
+    background-color: #0056b3;
+}
+
+/* Filter button */
+.filter {
+    background-color: #ddd;
+    color: black;
+}
+
+.filter:hover {
+    background-color: #bbb;
+}
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+.filter-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 1000;
+    width: 400px;
+    max-width: 90%;
+  }
+  
+  .filter-popup h3 {
+    margin-bottom: 10px;
+  }
+  
+  .filter-popup button {
+    margin-right: 10px;
+  }
+  
+  /* Overlay for background */
+  .filter-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+  
+  .filter-container {
+    background-color: white;
+    height: 400px;
+    width: 350px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    max-height: 550px;
+    overflow-y: auto;
+  }
+  
+  .filter-group {
+    margin-bottom: 20px;
+  }
+  
+  .filter-group h4 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .filter-group div {
+    margin-bottom: 5px;
+  }
+  
+  .filter-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .filter-actions button {
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    border: none;
+  }
+  
+  .filter-actions button:hover {
+    opacity: 0.8;
+  }
+  
+  button.selected {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+  }
+  
+  input[type="radio"] {
+    margin-right: 5px;
+  }
+  
+  /* Filter Section Modal */
+  .filter-section-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000B2; /* Blurred background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  /* Input and Search Box */
+  .search-input {
+    padding-left: 30px;
+  }
+  
+  .search-icon {
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: gray;
+    position: absolute;
+  }
+  
+  /* Checkbox and Radio Buttons */
+  .form-check-input {
+    margin-right: 10px;
+  }
+  
+  .rounded-radio {
+    border-radius: 50%;
+  }
+  
+  /* Buttons */
+  .btn {
+    padding: 8px 15px;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .edit-container {
+    width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    margin-right: 80%;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .modal-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+  
+  .btn:hover {
+    opacity: 0.8;
+  }
+  

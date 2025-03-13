@@ -1,0 +1,193 @@
+.container {
+    margin-top: 5px;
+    height: 83vh;  /*Set height to 80vh */
+    width: 1080px; /* Set container width to 75% */
+    border: 1px solid #A2A1A833;
+    margin-left: 304px; /* Centers container horizontally */
+    border-radius: 10px;
+    font-family: lexend;
+    font-size: 14px;
+  }
+ 
+  .container button{
+    height: 45px;
+    width: 176px;
+    background-color: #3F8CFF;
+    font-family: lexend;
+    border-radius: 10px;
+    color: #FFFFFF;
+    border: none;
+  }
+ 
+ 
+ 
+  /* .input-group-text {
+    border-right: 0;
+  } */
+ 
+ 
+ 
+  .btn-primary {
+    border-radius: 5px;
+  }
+  .input-group {
+    position: relative;
+  }
+ 
+  .input-group .form-control {
+    padding-left: 40px; /* To make space for the search icon */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 330px;
+    box-shadow: none;
+  }
+ 
+  .input-group .bi-search {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* Prevent the image from blocking input clicks */
+  }
+ 
+  .job-category {
+    height: 500px; /* Fixed height for each category */
+    overflow-y: auto; /* Enables vertical scrolling */
+    border: 1px solid #ddd; /* Optional: Adds border for separation */
+    /* padding: 10px; */
+    border-radius: 10px;
+    background-color: #fff; /* Keeps background clean */
+    position: relative;
+    /* Hide scrollbar */
+    scrollbar-width:thin ;  
+  }
+ 
+  .category-header {
+    position: sticky;
+    top: 0;
+    background-color: white; /* Keep the header visible */
+    /* margin-top: 10px; */
+    height: 40px;
+    z-index: 2;
+  }
+ 
+  h5 {
+    display: flex;
+  }
+ 
+  h6{
+    font-size: 16px;
+    font-weight: 600;
+  }
+ 
+  /* Style for Active, Inactive, Completed text */
+.category-text {
+  font-family: lexend;
+  color:#16151C; /* Default dark text */
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+}
+ 
+.job-card{
+  background-color: #A2A1A80D;
+  border-radius: 10px;
+  border: none;
+ 
+}
+ 
+.job-category {
+  width: 333px;
+}
+.row {
+ 
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /*Space between categories */
+  padding-left: 10px;
+  padding-right: 10px;
+}
+ 
+.bg-primary{
+  height: 34px;
+  background-color: #3F8CFF !important;
+  font-family: lexend;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 25px;
+ 
+}
+ 
+ 
+ 
+ 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000B2; /* Blurred background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+ 
+ 
+.add-job-form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+ 
+.overlay h2{
+  font-family: Lexend;
+  font-weight: 600;
+  font-size: 23px;
+  line-height: 30px;
+}
+ 
+.form-control{
+  font-family: Lexend;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: #A2A1A8CC;
+}
+.form-label{
+  font-family: Lexend;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #16151C;
+}
+::placeholder{
+  font-family: Lexend;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: #A2A1A8CC;
+}
+ 
+ 
+.form-actions .cancel-btn{
+  border: 1px solid #A2A1A833;
+}
+ 
+.form-actions .add-btn{
+  background-color: #3F8CFF;
+}
+ 
+ 
+.form-actions button{
+  width: 166px;
+  height: 50px;
+  border-radius: 10px;
+  row-gap: 10px;
+  font-family: Lexend;
+  font-weight: 400;
+  font-size: 16px;
+}
+ 

@@ -1,0 +1,210 @@
+<div class="employee-table-container">
+  <!-- Employee Table -->
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th colspan="7">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <i class="bi bi-search me-2"></i>
+              <input type="text" class="form-control" placeholder="Search..." />
+            </div>
+            <div>
+              <button class="btn btn-primary" routerLink="/header/personal-info">
+                <i class="bi bi-plus-circle me-2"></i> Add Employee
+              </button>
+              <button class="btn btn-secondary" (click)="toggleFilterSection()">
+                <i class="bi bi-sliders2 me-2"></i> Filter
+              </button>
+            </div>
+          </div>
+        </th>
+      </tr>
+      <tr class="details">
+        <th>Employee Name</th>
+        <th>Employee ID</th>
+        <th>Department</th>
+        <th>Designation</th>
+        <th>Mode</th>
+        <th>Assigned</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of pagedEmployees">
+        <td>
+          <div class="emp">
+            <img [src]="emp.image" alt="Profile" class="employee-thumbnail">
+            <span>{{ emp.name }}</span>
+          </div>
+        </td>
+        <td>{{ emp.id }}</td>
+        <td>{{ emp.department }}</td>
+        <td>{{ emp.designation }}</td>
+        <td>{{ emp.mode }}</td>
+        <td>
+          <button [ngClass]="emp.assigned === 'Yes' ? 'btn btn-success' : 'btn btn-danger'">
+            {{ emp.assigned }}
+          </button>
+        </td>
+        <td class="actions-column">
+          <button (click)="viewEmployee(emp)" class="btn btn-info btn-sm" title="View">
+            <i class="bi bi-eye"></i>
+          </button>
+          <button (click)="editEmployee(emp)" class="btn btn-warning btn-sm" title="Edit">
+            <i class="bi bi-pencil"></i>
+          </button>
+          <button (click)="deleteEmployee(emp.id)" class="btn btn-danger btn-sm" title="Delete">
+            <i class="bi bi-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Employee Details Modal -->
+  <div class="modal-backdrop" *ngIf="selectedEmployee">
+    <div class="modal-content">
+      <h4>Employee Details</h4>
+      <button class="close-btn" (click)="closeModal()">&times;</button>
+      <div class="employee-info">
+        <img [src]="selectedEmployee.image" class="employee-detail-img" alt="Employee Image" />
+        <p><strong>Name:</strong> {{ selectedEmployee.name }}</p>
+        <p><strong>ID:</strong> {{ selectedEmployee.id }}</p>
+        <p><strong>Department:</strong> {{ selectedEmployee.department }}</p>
+        <p><strong>Designation:</strong> {{ selectedEmployee.designation }}</p>
+        <p><strong>Mode:</strong> {{ selectedEmployee.mode }}</p>
+        <p><strong>Assigned:</strong> {{ selectedEmployee.assigned }}</p>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <!-- Employee Edit Modal -->
+  <div class="modal-backdrop" *ngIf="selectedEmployee && isEditing">
+
+
+  <div class="modal-content">
+    <h4>Edit Employee Details</h4>
+    <button class="close-btn" (click)="closeModal()">&times;</button>
+
+    <div class="employee-info">
+      <label>Name:</label>
+      <input type="text" class="form-control" [(ngModel)]="editEmployeeData.name" />
+
+
+      <label>ID:</label>
+      <input type="text" class="form-control" [(ngModel)]="editEmployeeData.id" disabled />
+
+      <label>Department:</label>
+      <input type="text" class="form-control" [(ngModel)]="editEmployeeData.department" />
+
+      <label>Designation:</label>
+      <input type="text" class="form-control" [(ngModel)]="editEmployeeData.designation" />
+
+      <label>Mode:</label>
+      <select class="form-control" [(ngModel)]="editEmployeeData.mode">
+        <option value="Work From Home">Work From Home</option>
+        <option value="Office">Office</option>
+        <option value="Hybrid">Hybrid</option>
+      </select>
+
+      <label>Assigned:</label>
+      <select class="form-control" [(ngModel)]="editEmployeeData.assigned">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn btn-danger" (click)="resetEmployeeData()">Reset</button>
+      <button class="btn btn-primary" (click)="saveEmployeeData()">Save</button>
+    </div>
+  </div>
+</div>
+
+ 
+  <!-- Filter Modal -->
+  <div class="filter-section-modal" *ngIf="showFilterSection">
+    <div class="filter-container">
+      <h4>Filter Employees</h4>
+
+      <div class="mb-3 position-relative">
+        <i class="bi bi-search position-absolute search-icon"></i>
+        <input type="text" class="form-control search-input" placeholder="Search by Name or ID..." />
+      </div>
+
+      <!-- Multi-Select for Departments -->
+      <div class="mb-3">
+        <label><strong>Department</strong></label>
+        <div class="department-list">
+          <div *ngFor="let dept of departments" class="form-check">
+            <input 
+              type="checkbox" 
+              [id]="dept" 
+              [value]="dept"
+              (change)="toggleDepartmentSelection(dept)"
+              [checked]="selectedDepartments.includes(dept)"
+              class="form-check-input"
+            />
+            <label [for]="dept" class="form-check-label">
+              {{ dept }}
+            </label>
+          </div>
+        </div>
+      </div>
+
+       <!-- Work Mode Selection -->
+       <div class="mb-3">
+        <label><strong>Select Type</strong></label>
+        <div class="row">
+          <div class="col-6" *ngFor="let mode of workModes; let i = index">
+            <div class="form-check">
+              <input 
+                type="radio" 
+                class="form-check-input rounded-radio"
+                [id]="'mode' + i"
+                name="workMode" 
+                [value]="mode"
+                [checked]="selectedWorkMode === mode"
+                (change)="selectWorkMode(mode)"
+              />
+              <label class="form-check-label" [for]="'mode' + i">
+                {{ mode }}
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Multi-Select for Projects -->
+      <div class="mb-3">
+        <label><strong>Projects</strong></label>
+        <div class="project-list">
+          <div *ngFor="let project of projects" class="form-check">
+            <input 
+              type="checkbox" 
+              [id]="project" 
+              [value]="project"
+              (change)="toggleProjectSelection(project)"
+              [checked]="selectedProjects.includes(project)"
+              class="form-check-input"
+            />
+            <label [for]="project" class="form-check-label">
+              {{ project }}
+            </label>
+          </div>
+        </div>
+      </div>
+
+     
+
+      <div class="d-flex justify-content-end">
+        <button class="btn btn-danger" (click)="cancelFilters()">Cancel</button>
+        <button class="btn btn-primary ms-2" (click)="applyFilters()">Apply</button>
+      </div>
+    </div>
+  </div>
+</div>
+

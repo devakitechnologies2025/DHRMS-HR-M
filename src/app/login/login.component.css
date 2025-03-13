@@ -1,0 +1,259 @@
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 95vh;
+  justify-content: space-between;
+}
+
+.left {
+  width: 48%;
+  height: 100%;
+  background-color: #3f8cff;
+  color: aliceblue;
+  padding: 50px;
+  border-radius: 30px 0 0 30px;
+  margin: 20px;
+}
+
+.left h1 {
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 56px;
+  text-align: left;
+}
+
+.left img {
+  width: 80%;
+  max-width: 600px;
+  margin-left: 10%;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.left h2 {
+  gap: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.left h2 img {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.right {
+  width: 48%;
+  padding: 30px;
+  padding-top: 9%;
+  border-radius: 0 30px 30px 0;
+  margin-left: 20px;
+}
+
+.right h1 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #005cc1;
+}
+
+.right h2 {
+margin-bottom: 10px;
+font-family: Lexend;
+font-size: 30px;
+font-weight: 600;
+line-height: 40px;
+text-align: left;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+
+}
+
+.right p {
+  color: rgb(131, 129, 126);
+  margin-bottom: 5px;
+  width: 445px;
+height: 24px;
+gap: 0px;
+opacity: 0px;
+font-family: Lexend;
+font-size: 16px;
+font-weight: 300;
+line-height: 24px;
+text-align: left;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+}
+
+.right form input {
+  width: 80%;
+  max-width: 500px; /* Ensures that all inputs and button have the same width */
+  height: 35px;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid rgb(222, 222, 209);
+  margin-bottom: 15px;
+}
+
+.right form input:focus {
+  outline: none;
+  border-color: #005cc1;
+  transition: border-color 0.3s ease;
+}
+
+.right .password-container {
+  width: 100%;
+}
+
+.right form button {
+  padding: 15px 20px;
+  height: 50px;
+  margin-top: 10px;
+  width: 80%; /* Same width as input fields */
+  max-width: 500px; /* Ensures the button doesn't exceed the input field width */
+  background-color: #3f8cff;
+  color: aliceblue;
+  border-radius: 10px;
+  border: 1px solid rgb(246, 246, 209);
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #1f74d7;
+}
+
+button[type="submit"]:focus {
+  outline: none;
+  border: 2px solid #005cc1;
+}
+
+.actions a {
+  display: inline-block;
+  margin: 5px 10px;
+  font-size: 20px;
+  color: #005cc1;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.actions a:hover {
+  color: #003a80;
+}
+
+#forget {
+  font-weight: 500;
+  font-size: medium;
+  margin-left: 320px;
+}
+
+#newuser {
+  font-weight: 500;
+  font-size: medium;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  color: #666;
+  font-size: 25px;
+  width: 65%;
+}
+
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 1;
+  border-top: 1px solid #67a4f9;
+  margin: 0 10px;
+}
+
+/* Adjust logo and icon styles */
+.comlog {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.comlog img {
+  width: 50px;
+  height: 50px;
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+h2 img.welcome-icon {
+  margin-left: 5px;
+}
+
+.right .error-message {
+  color: red !important;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left, .right {
+    width: 100%;
+  }
+
+  .left {
+    margin: 10px 0;
+  }
+
+  .right form button {
+    width: 80%; /* Adjust button width for small screens */
+  }
+}
+
+.password-container {
+  position: relative;
+  width: 100%; /* Ensures the container takes the full width */
+}
+
+.password-container input {
+  width: 100%; /* Makes the input fill the container */
+  max-width: 413px; /* Limits the width of the input field */
+  height: 41px; /* Sets a fixed height for the input */
+  padding-right: 40px; /* Space for the eye icon */
+  padding-left: 10px; /* Padding to align text inside */
+  font-size: 16px; /* Controls the font size inside the input */
+  border-radius: 10px;
+  border: 1px solid rgb(222, 222, 209);
+  opacity: 1; /* Ensures the input is fully visible */
+}
+
+.eye-icon {
+  position: absolute;
+  right: 10px; /* Positions the icon on the right side of the input */
+  top: 50%;
+  transform: translateY(-50%); /* Vertically centers the icon */
+  cursor: pointer;
+  z-index: 1; /* Ensures the icon stays above the input field */
+}
+
+.eye-icon i {
+  font-size: 18px; /* Icon size */
+  color: #333; /* Icon color */
+}

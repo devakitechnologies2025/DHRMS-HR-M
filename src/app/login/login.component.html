@@ -1,0 +1,67 @@
+<div class="container-fluid vh-100 d-flex align-items-center justify-content-center">
+  <div class="row w-75 bg-white shadow rounded">
+    <!-- Left Side: Information -->
+    <div class="col-md-6 p-5 bg-primary text-white d-flex flex-column justify-content-center rounded-start">
+      <h2 class="d-flex align-items-center mb-4">
+        <img src="../../assets/devaki logo.png" alt="Devaki Logo" class="me-2 rounded-circle" width="50">
+        <span>HRMS</span>
+      </h2>
+      <h1 class="display-5 fw-bold">Your place to work<br>Plan. Create. Control</h1>
+      <img src="../../assets/Illustration.png" alt="Workspace illustration" class="img-fluid rounded mt-4">
+    </div>
+
+    <!-- Right Side: Login Form -->
+    <div class="col-md-6 p-5">
+      <h2 class="d-flex align-items-center mb-4">
+        <img src="../../assets/devaki logo.png" alt="Devaki Logo" class="me-2 rounded-circle" width="50">
+        <span>HRMS</span>
+      </h2>
+      <h3 class="fw-bold mb-3">Welcome 👋</h3>
+      <p class="text-muted">Please login here</p>
+
+      <form (ngSubmit)="validateCredentials()">
+        <div class="mb-3">
+          <input 
+            type="text" 
+            class="form-control" 
+            id="username" 
+            name="username" 
+            placeholder="Email or Employee ID" 
+            [(ngModel)]="email"
+            required>
+        </div>
+
+        <div class="mb-3 position-relative">
+          <input 
+            [type]="passwordVisible ? 'text' : 'password'" 
+            class="form-control" 
+            id="password" 
+            name="password" 
+            placeholder="Password" 
+            [(ngModel)]="password" 
+            required>
+          <i 
+            class="bi" 
+            [ngClass]="passwordVisible ?   'bi-eye' :'bi-eye-slash'"
+            (click)="togglePasswordVisibility()" 
+            style="cursor: pointer; position: absolute; top: 50%; right: 10px; transform: translateY(-50%);">
+          </i>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <a routerLink="/forgot-password" class="text-primary text-decoration-none">Forgot Password?</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 mb-3">Login</button>
+
+        <div class="text-center text-muted mb-3">or</div>
+
+        <div class="text-center">
+          <a routerLink="/newuser" class="text-primary text-decoration-none">New User?</a>
+        </div>
+      </form>
+
+      <p *ngIf="errorMessage" class="text-danger mt-3">{{ errorMessage }}</p>
+    </div>
+  </div>
+</div>

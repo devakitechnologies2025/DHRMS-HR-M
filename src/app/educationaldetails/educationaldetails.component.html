@@ -1,0 +1,76 @@
+<div class="page-container">
+    <!-- Navigation Tabs -->
+    <div class="navigation">
+        <div class="nav-item" (click)="showForm('personal-info')">
+            <i class="bi bi-person-fill"></i> Personal Information
+        </div>
+        <div class="nav-item active" (click)="showForm('educationaldetails')">
+            <i class="bi bi-briefcase-fill"></i> Educational Details
+        </div>
+        <div class="nav-item" (click)="showForm('documents')">
+            <i class="bi bi-file-earmark-text-fill"></i> Employment Details
+        </div>
+    </div>
+
+    <!-- Education Form -->
+    <div class="education-container">
+        <h3>Educational Details</h3>
+
+        <form>
+            <div class="grid-container">
+                <div class="form-group">
+                    <input type="text" id="qualification" [(ngModel)]="education.qualification" name="qualification"
+                        placeholder="Name of Qualification">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="specialization" [(ngModel)]="education.specialization" name="specialization"
+                        placeholder="Specialization">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="institution" [(ngModel)]="education.institution" name="institution"
+                        placeholder="Institution">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="university" [(ngModel)]="education.university" name="university"
+                        placeholder="University/Board">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="enrolment" [(ngModel)]="education.enrolment" name="enrolment"
+                        placeholder="Enrolment Number">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="period" [(ngModel)]="education.period" name="period"
+                        placeholder="Period of Study">
+                </div>
+
+                <div class="form-group">
+                    <select id="graduated" [(ngModel)]="education.graduated" name="graduated">
+                        <option value="" disabled selected>Graduated</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <select id="course" [(ngModel)]="education.course" name="course">
+                        <option value="" disabled selected>Course Attended</option>
+                        <option value="Undergraduate">Undergraduate</option>
+                        <option value="Postgraduate">Postgraduate</option>
+                        <option value="Diploma">Diploma</option>
+                        <option value="Certificate">Certificate</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button type="button" class="cancel" (click)="handleCancel()">Cancel</button>
+                <button type="button" class="next" (click)="handleNext()">Next</button>
+            </div>
+        </form>
+    </div>
+</div>

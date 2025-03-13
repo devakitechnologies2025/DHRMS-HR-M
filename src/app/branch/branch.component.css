@@ -1,0 +1,135 @@
+.container {
+    width: 1080px;
+    height: 80vh;
+    border: 1px solid #ccc; 
+    border-radius: 10px;
+    margin-left: 304px;
+  }
+  .fixed-header{
+    padding: 10px;
+  }
+  thead tr th{
+    color: #A2A1A8;
+  }
+  .form-control{
+    box-shadow: none;
+    width: 330px;
+    font-size: 18px;
+    border-radius: 10px;
+  }
+  .btn-primary{
+    width: 180px;
+    height: 45px;
+    margin-left: 5px;
+    border-radius: 10px;
+  }
+  
+  .btn-light{
+    width: 90px;
+    height: 45px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+  .custom-gap {
+    margin-left: 20px; /* Set your desired gap here */
+  }
+  .input-group {
+    position: relative;
+  }
+  
+  .input-group .form-control {
+    padding-left: 40px; /* To make space for the search icon */
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .input-group .bi-search {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+
+  }
+
+  .table-container table {
+    border-collapse: collapse; /* Ensures consistent border behavior */
+    width: 100%;
+  }
+  
+  thead {
+    border-bottom: 1px solid #ccc; /* Keep a bottom border only if data exists */
+  }
+  
+  tbody:empty,
+  .table-container:has(.no-data-container) tbody tr td{
+    border-bottom: none; /* Remove bottom border when there is no data */
+  }
+  .table-container {
+    max-height: calc(80vh - 90px); /* Adjust based on header size */
+    overflow-y: auto;
+  }
+  
+  .table {
+    width: 100%; /* Ensure table takes full width of the container */
+    border-collapse: collapse; /* Remove unnecessary gaps between cells */
+  }
+  
+  thead {
+    position: sticky;
+    top: 0;
+    
+    z-index: 1;
+    background-color: white;
+  }
+  .no-data-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute; /* Centering relative to the parent */
+    top: 55%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .no-data-text {
+    font-size: 24px;
+    color: #888;
+    font-weight: normal;
+  }
+
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000B2; /* Blurred background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.add-holiday-form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.form-actions{
+  border-radius: 10px;
+  height: 45px;
+}
+.cancel-btn{
+  width: 150px;
+  background-color: transparent;
+  border: 1px solid #A2A1A833;
+  color: #16151C;
+}
+.add-btn{
+  width: 150px;
+  background-color: #3F8CFF;
+  color: #FFFFFF;
+}
+  

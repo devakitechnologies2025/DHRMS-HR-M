@@ -1,0 +1,16 @@
+<!-- Add New Department Form (Conditionally displayed) -->
+<div class="overlay" *ngIf="showAddDepartmentForm">
+  <div class="add-department-form">
+      <h2>Add New Department</h2>
+      <form (ngSubmit)="onAddDepartment()">
+          <div class="mb-3">
+              <label for="departmentName" class="form-label"></label>
+              <input type="text" class="form-control" id="departmentName" name="departmentName" placeholder="Enter Department Name" [(ngModel)]="departmentName" required />
+          </div>
+          <div class="form-actions d-flex justify-content-between mt-4">
+              <button type="button" class="btn cancel-btn" (click)="closeForm()">Cancel</button>
+              <button type="submit" class="btn add-btn">Add</button>
+          </div>
+      </form>
+  </div>
+</div>

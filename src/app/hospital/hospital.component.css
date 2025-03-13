@@ -1,0 +1,118 @@
+.container {
+  max-width: 1080px;
+  height: 80vh;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-left: 305px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Prevents entire container from scrolling */
+  padding: 15px;
+}
+.search-container input {
+  width: 380px !important;  /* Set the search bar width */
+  max-width: 50%;/* Ensures responsiveness */
+  height: 45px; /* Keep the height */
+  box-shadow: none;
+  border-radius: 10px;
+}
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  pointer-events: none; /* Prevents interference with input */
+}
+.search-bar {
+  padding-left: 40px !important; /* Ensures text doesn't overlap with icon */
+}
+/* Style for the Filter button */
+.btn-secondary-custom {
+  background-color: transparent !important;
+  border:1px solid #a2a1a8 !important;
+  border-radius: 10px;
+  color:#16151c !important; /* Ensure text remains visible */
+}
+
+
+
+.search-container button {
+  height: 40px;  /* Adjust the height of both buttons */
+}
+
+.btn-primary {
+  width: 200px;  /* Custom width for the 'Add New Department' button */
+  border-radius: 10px;
+}
+
+.btn-secondary {
+  width: 100px;  /* Custom width for the 'Filter' button */
+}
+
+.fixed-header {
+  flex-shrink: 0; /* Ensures the header doesn't shrink */
+  /* background-color: white; */
+  padding-bottom: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.scrollable-content {
+  flex-grow: 1;
+  overflow-x: hidden;
+  overflow-y: auto; /* Enables vertical scrolling */
+  padding-right: 10px; /* Adds some padding for scrollbar */
+}
+
+.card {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.list-group-item {
+  border: none !important; /* Removes the bottom border */
+  padding: 0.75rem 1rem;
+}
+
+.card-header {
+  font-weight: bold;
+  padding: 0.75rem 1rem;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column; /* Displays content one below the other */
+  position: relative;
+}
+.employee-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.employee-details a {
+  font-size: 1.5rem;
+  color: inherit !important; /* Inherit color from parent element, no specific color */
+  margin-left: auto; /* Pushes the anchor tag to the right */
+  text-decoration: none !important; /* Removes underline */
+}
+.department-greeting {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin: 0;
+}
+
+/* View All Positioning */
+.view-all {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+}
+
+.view-all a {
+  font-size: 0.9rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+

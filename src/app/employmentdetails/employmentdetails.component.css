@@ -1,0 +1,135 @@
+.employment-container {
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: 20%;
+}
+
+.page-container {
+    margin: 5% auto;
+    width: 95%; /* Increased width */
+    max-width: 1100px; /* More space for larger screens */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 30px; /* Slightly increased padding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 5%;
+}
+
+/* Navigation Tabs */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0;
+    border-bottom: 2px solid #ddd;
+}
+
+.nav-item {
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+    font-family: 'Lexend', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+    background: #f1f1f1;
+}
+
+.nav-item.active {
+    color: #3F8CFF;
+    font-weight: bold;
+    border-bottom: 3px solid #3F8CFF;
+}
+
+
+.employment-form {
+    padding: 15px;
+    border: 1px solid #444;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 5px;
+}
+
+.add-employment {
+    background: none;
+    color: #00aaff;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.cancel {
+    color: #888;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit {
+    background: #00aaff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.checkbox-container {
+    display: flex;
+    gap: 30px; /* Increases spacing between checkboxes */
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between checkbox and label */
+}
+
+.checkbox-item input {
+    width: 16px;
+    height: 16px;
+    accent-color: #ffffff; /* Ensures checkbox matches the design */
+}
+
+.checkbox-item label {
+    font-size: 16px;
+    color: black;
+    font-weight: 500;
+}
+select {
+    width: 100%;
+    padding: 10px;
+    color: black;
+    border: 1px solid #444;
+    border-radius: 5px;
+    font-size: 14px;
+}

@@ -1,0 +1,51 @@
+<div class="modal-container">
+    <!-- Flags Row with Popup Effect -->
+    <div class="flags-container">
+        <div class="flag-container">
+            <ng-container *ngFor="let country of countryList; let i = index">
+                <img 
+                    *ngIf="selectedFlag !== country.flag" 
+                    [src]="country.flag" 
+                    class="flag-icon flag-{{i+1}}" 
+                />
+            </ng-container>
+            <!-- Centered Selected Flag -->
+            <img [src]="selectedFlag" class="selected-flag" />
+        </div>
+    </div>
+
+    <h3>Select Country</h3>
+    <p>You've created a new project! Invite colleagues to collaborate on this project.</p>
+
+    
+
+<!-- Country Selection Label -->
+<label class="dropdown-title"><strong>Country Selection</strong></label>
+
+<!-- Dropdown Button -->
+<div class="dropdown-container" (click)="toggleDropdown($event)">
+    <div class="custom-dropdown">
+        <img *ngIf="selectedFlag" [src]="selectedFlag" class="flag-icon-dropdown-selected" />
+        <span class="selected-text">{{ selectedCountryName }}</span>
+        <span class="dropdown-icon">&#9662;</span> <!-- Dropdown arrow -->
+    </div>
+
+    <!-- Dropdown Options -->
+    <div class="custom-options" *ngIf="dropdownOpen">
+        <div *ngFor="let country of countryList" 
+             (click)="selectCountry(country)" 
+             class="custom-option"
+             [ngClass]="{'selected-option': country.name === selectedCountryName}">
+            <img [src]="country.flag" class="flag-icon-dropdown" />
+            <span>{{ country.name }}</span>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Buttons -->
+    <div class="btn-group">
+        <button class="btn btn-light" (click)="closeModal()">Cancel</button>
+        <button class="btn btn-primary">Confirm</button>
+    </div>
+</div>

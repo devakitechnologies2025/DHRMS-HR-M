@@ -1,0 +1,218 @@
+ 
+.container{
+    margin-top: 5px;
+    height: 87vh;  /*Set height to 80vh */
+    width: 1100px; /* Set container width to 75% */
+    border: 1px solid #A2A1A833;
+    margin-left: 330px; /* Centers container horizontally */
+    border-radius: 10px;
+}
+ 
+.container1{
+    height: 8vh; /* Set height to 80vh */
+    width: 1070px; /* Set container width to 75% */
+    /* border: 1px solid black;  */
+    /* margin-left: 360px; Centers container horizontally */
+    border-radius: 10px;
+    display: flex;
+ 
+.button {
+   
+    /* border: 2px solid red; */
+    margin-left: auto;
+    margin-top: 15px;
+   
+}  
+ 
+.button button{
+    height: 45px;
+    width: 220px;
+    background-color: #3F8CFF;
+    font-family: lexend;
+ 
+    border-radius: 10px;
+   color: #FFFFFF;
+   border: none;
+   /* display: flex; */
+   /* gap: 10px; */
+}
+.button img{
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+    /* left: 100px; */
+    /* border-radius: 100%; */
+   
+}
+   
+}
+.container1 input {
+    width: 300px;
+    height: 39px ;
+    margin-top: 15px;
+    font-family: lexend;
+   
+    padding-right: 16px;
+   
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-image: url('../../assets/search.png');
+    background-position: 10px center;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    padding-left: 39px; /* Adjust for the icon */
+    box-shadow: none !important;
+  }
+ 
+  .no-data {
+    text-align: center;
+    font-family: Lexend;
+    font-weight: 300px;
+    font-size: 24px;
+    line-height: 22px;
+    color: #D0D9E5;
+    padding: 50px 0; /* Add padding to center text vertically */
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%); /* Center it both vertically and horizontally */
+    /* border: 2px solid red; Ensure no borders */
+  }
+ 
+  .container2{
+    margin-top: 10px;
+    font-family: lexend;
+   
+  }
+ 
+  .container2 table th{
+    /* background-color: red; */
+    color: #A2A1A8;
+    font-weight: 300;
+ 
+  }
+  .container2 table td{
+    color: #16151C;
+    font-weight: 300;
+    line-height: 24px;
+  }
+ 
+ 
+   tbody tr {
+    border-left: 4px solid #3F8CFF;
+     /* Adds space below */
+   
+  }
+  tbody thead tr{
+    border-left: none;
+  }
+ 
+  tbody tr.past-holiday {
+    border-left: 4px solid  rgba(162, 161, 168, 0.2);
+    opacity: 0.8; /* Optional: Makes text faded */
+  }
+ 
+  /* Set a fixed height for the table body and enable scrolling */
+ 
+ 
+  /* Ensure the table header remains visible */
+  .table-container thead {
+    position: sticky;
+    top: 0;
+    background: white; /* Ensures the header stays visible when scrolling */
+    z-index: 2;
+  }
+ 
+  /* Ensure columns align properly when scrolling */
+  .table-container tbody {
+    display: block;
+    overflow-y: auto;
+    max-height: 450px; /* Adjust based on requirement */
+  }
+ 
+  .table-container tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+ 
+ 
+ 
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000B2; /* Blurred background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+ 
+.add-holiday-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 380px;
+    height: 330px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+ 
+.add-holiday-form h2 {
+    font-size: 20px;
+    font-family: lexend;
+    /* margin-bottom: 20px; */
+}
+ 
+.add-holiday-form input {
+    margin-top: 10px;
+    width: 330px;
+    height: 45px;
+    box-shadow: none;
+    font-size: 18px;
+    font-family: lexend;
+}
+ 
+.cancel-btn,
+.add-btn {
+    width: 140px;
+    height: 40px;
+    margin-top: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: lexend;
+}
+ 
+.cancel-btn {
+    border: 1px solid #A2A1A833;
+    color: #16151C;
+    background-color: transparent;
+}
+ 
+.add-btn {
+    background-color: #3F8CFF;
+    color: white;
+    border: none;
+}
+ 
+ 
+/* Style for Date Input Container */
+.date-picker-container {
+  position: relative;
+  width: 100%;
+  opacity: 0.7;
+}
+ 
+/* Style for the Date Input Field */
+.date-picker-container input {
+  width: 100%;
+ 
+  /* padding-right: 40px;           Space for the calendar icon */
+}
+ 

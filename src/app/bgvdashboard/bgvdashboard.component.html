@@ -1,0 +1,67 @@
+<div class="dashboard-container">
+
+    <!-- <div class="header">
+        <div class="search-container">
+            <i class="bi bi-search search-icon"></i> <!-- Bootstrap Search Icon
+            <input type="text" class="search-box" placeholder="Search">
+        </div>
+        <div class="button-group">
+            <button class="add-new bgv" (click)="navigateToBGV()">
+                <i class="bi bi-plus-circle me-2"></i> Add New BGV
+              </button>
+             
+              <button class="filter">Filter</button>
+        </div>
+    </div> -->
+    
+
+    <div class="card-container">
+
+        <div class="card green">
+            <div class="card-header">
+                <i class="bi bi-check-circle"></i> <!-- Approved Icon -->
+                <span>Approved</span>
+            
+            <h2>560</h2> <!-- Number moved below the icon/text -->
+            </div>
+            <span class="status green"><i class="bi bi-arrow-up-circle-fill"></i> 12%</span>
+            <p class="update-date">Update: {{ updateDate }}</p>
+        </div>
+
+        <div class="card red">
+            <div class="card-header">
+                <i class="bi bi-x-circle"></i> <!-- Rejected Icon -->
+                <span>Rejected</span>
+            
+            <h2>470</h2>
+            </div>
+            <span class="status red"><i class="bi bi-heart-fill"></i> 8%</span>
+            <p class="update-date">Update: {{ updateDate }}</p>
+        </div>
+
+        <div class="card blue">
+            <div class="card-header">
+                <i class="bi bi-clipboard-check"></i> <!-- Total Completed Icon -->
+                <span>Total Completed</span>
+           
+            <h2>2080</h2>
+            </div>
+            <span class="status red"><i class="bi bi-heart-fill"></i> 8%</span>
+            <p class="update-date">Update: {{ updateDate }}</p>
+        </div>
+
+        <div class="card yellow">
+            <div class="card-header">
+                <i class="bi bi-hourglass-split"></i> <!-- Pending Icon -->
+                <span>Pending</span>
+           
+            <h2>1050</h2>
+            </div>
+            <div class="status green">
+                <i class="bi bi-arrow-up-circle-fill"></i> 5%
+            </div>
+            <p class="update-date">Update: Nov 24, 2024</p>
+        </div>
+
+    </div>
+</div>

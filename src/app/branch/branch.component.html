@@ -1,0 +1,99 @@
+<div class="container mt-4">
+  <div class="fixed-header">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <div class="input-group" style="width: 300px;">
+        <div class="input-group-prepend">
+          <i class="bi bi-search fs-4"></i>
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+      </div>
+      <div class="d-flex">
+        <!-- Add New Branch Button -->
+        <button class="btn btn-primary d-flex align-items-center gap-2" (click)="openAddbranchsForm()">
+            <i class="bi bi-plus-circle fs-5"></i> 
+            <span>Add New Branch</span>
+        </button>
+    
+        <!-- Filter Button with Proper Spacing -->
+        <button class="btn btn-light d-flex align-items-center gap-2 ms-1">
+            <i class="bi bi-sliders"></i> 
+            <span>Filter</span>
+        </button>
+    </div>
+    </div>
+  </div>
+
+  <!-- Table Wrapper -->
+  <div class="table-container">
+    <table class="table table-bordered-bott">
+      <thead class="thead-light">
+        <tr>
+          <th>Branch City</th>
+          <th>Branch Address</th>
+          <th>Pincode</th>
+          <th>Country</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngIf="branches.length > 0; else noData">
+          <tr *ngFor="let branch of branches">
+            <td>{{ branch.city }}</td>
+            <td>{{ branch.address }}</td>
+            <td>{{ branch.pincode }}</td>
+            <td>{{ branch.country }}</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+
+    <!-- No Data Template -->
+    <ng-template #noData>
+      <tbody class="no-data-container">
+        <tr>
+          <td colspan="4">
+            <div class="no-data-text">No Data To Display</div>
+          </td>
+        </tr>
+      </tbody>
+    </ng-template>
+      
+    
+  </div>
+
+  <div class="overlay" *ngIf="showAddbranchsForm">
+    <div class="add-holiday-form">
+        <h2>Add New Holiday</h2>
+        <form (ngSubmit)="closeAddbranchsForm()">
+          <div class="mb-3">
+            <select class="form-control" id="country" name="country" required>
+              <option value="" disabled selected>Country</option>
+              <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+            </select>
+          </div>
+   
+          <!-- Branch City Dropdown -->
+          <div class="mb-3">
+            <select class="form-control" id="branchCity" name="branchCity" required>
+              <option value="" disabled selected>Branch City</option>
+              <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+            </select>
+          </div>
+
+          <!-- Full Address Input -->
+          <div class="mb-3">
+            <input type="text" class="form-control" id="fullAddress" name="fullAddress" placeholder="Full Address" required />
+          </div>
+          <!-- Pincode Input -->
+          <div class="mb-3">
+            <input type="text" class="form-control" id="pincode" name="pincode" placeholder="Pincode" required />
+          </div>
+   
+   
+          <!-- Action Buttons -->
+        <div class="form-actions d-flex justify-content-between mt-4">
+          <button type="button" class="btn cancel-btn" (click)="closeAddbranchsForm()">Cancel</button>
+          <button type="submit" class="btn add-btn">Add</button>
+        </div>
+        </form>
+    </div>
+</div>

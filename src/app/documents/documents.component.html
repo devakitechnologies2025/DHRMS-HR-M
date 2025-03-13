@@ -1,0 +1,91 @@
+<body>
+    <div class="page-container">
+        <div class="navigation">
+            <div class="nav-item" onclick="showForm('personal-info')">
+                <i class="bi bi-person-fill"></i> Personal Information
+            </div>
+            <div class="nav-item" onclick="showForm('professional-info')">
+                <i class="bi bi-briefcase-fill"></i> ProfessionalInformation
+            </div>
+            <div class="nav-item active" onclick="showForm('documents')">
+                <i class="bi bi-file-earmark-text-fill"></i> Documents
+            </div>
+            <div class="nav-item" onclick="showForm('account-access')">
+                <i class="bi bi-key-fill"></i> Account Access
+            </div>
+        </div>
+
+        <div id="documents" class="form-container active">
+            <form>
+                <div class="form-grid">
+                    <!-- Appointment Letter -->
+                    <div class="form-item">
+                        <label for="appointmentLetter">Upload Appointment Letter</label>
+                        <div class="upload-box" onclick="document.getElementById('appointmentLetter').click();">
+                            <!-- Image Icon Added Above Text -->
+                            <img src="../../assets/Button.png" alt="Upload Icon" class="upload-img-icon">
+                            <i class="fas fa-file-upload upload-icon"></i>
+                            <div class="drag-drop-text">
+                                Drag & Drop or <span class="choose-file">Choose file</span> to upload
+                            </div>
+                            <div class="supported-formats">Supported formats: JPEG, PDF</div>
+                        </div>
+                        <input type="file" id="appointmentLetter" name="appointmentLetter" hidden />
+                    </div>
+
+                    <!-- Salary Slips -->
+                    <div class="form-item">
+                        <label for="salarySlips">Upload Salary Slips</label>
+                        <div class="upload-box" onclick="document.getElementById('salarySlips').click();">
+                            <!--Image Icon -->
+                            <img src="../../assets/Button.png" alt="Upload Icon" class="upload-img-icon">
+                            <i class="fas fa-file-upload upload-icon"></i>
+                            <div class="drag-drop-text">
+                                Drag & Drop or <span class="choose-file">Choose file</span> to upload
+                            </div>
+                            <div class="supported-formats">Supported formats: JPEG, PDF</div>
+                        </div>
+                        <input type="file" id="salarySlips" name="salarySlips" hidden />
+                    </div> 
+
+                    <!-- Relieving Letter -->
+                    <div class="form-item">
+                        <label for="relievingLetter">Upload Relieving Letter</label>
+                        <div class="upload-box" onclick="document.getElementById('relievingLetter').click();">
+                               <!--Image Icon -->
+                               <img src="../../assets/Button.png" alt="Upload Icon" class="upload-img-icon">
+                            <i class="fas fa-file-upload upload-icon"></i>
+                            <div class="drag-drop-text">
+                                Drag & Drop or <span class="choose-file">Choose file</span> to upload
+                            </div>
+                            <div class="supported-formats">Supported formats: JPEG, PDF</div>
+                        </div>
+                        <input type="file" id="relievingLetter" name="relievingLetter" hidden />
+                    </div>
+
+                    <!-- Experience Letter -->
+                    <div class="form-item">
+                        <label for="experienceLetter">Upload Experience Letter</label>
+                        <div class="upload-box" onclick="document.getElementById('experienceLetter').click();">
+                               <!--Image Icon -->
+                               <img src="../../assets/Button.png" alt="Upload Icon" class="upload-img-icon">
+                            <i class="fas fa-file-upload upload-icon"></i>
+                            <div class="drag-drop-text">
+                                Drag & Drop or <span class="choose-file">Choose file</span> to upload
+                            </div>
+                            <div class="supported-formats">Supported formats: JPEG, PDF</div>
+                        </div>
+                        <input type="file" id="experienceLetter" name="experienceLetter" hidden />
+                    </div>
+                </div>
+
+                <!-- Modal Actions -->
+                <div class="modal-actions">
+                    <button type="button" class="cancel" (click)="cancel()">Cancel</button>
+                    <button type="button" class="next" (click)="goToNextSection()">Next</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
