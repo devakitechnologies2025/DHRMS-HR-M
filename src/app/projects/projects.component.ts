@@ -294,4 +294,49 @@ export class ProjectsComponent {
     this.selectedProject = null;
     this.mode = null;
   }
+
+  showFilterSection = false;
+  // Filters
+  
+  selectedDepartments: string[] = [];
+  project = this.projects
+
+ 
+toggleFilterSection() {
+    this.showFilterSection = !this.showFilterSection;
+}
+ 
+  // applyFilters() {
+  //   this.showFilterSection = false;
+  // }
+ 
+  cancelFilters() {
+    this.showFilterSection = false;
+  }
+
+  filteredProjects: any[] = []; 
+
+  filters = {
+    projectName: '',
+    country: '',
+    status: ''  // Only one status can be active at a time
+  };
+  
+  updateStatus(status: string, event: any) {
+    if (event.target.checked) {
+      this.filters.status = status; // Set only the clicked checkbox as active
+    } else {
+      this.filters.status = ''; // Uncheck if clicked again
+    }
+  }
+  applyFilters() {
+    this.showFilterSection = false;
+    this.filteredProjects = this.projects.filter(project => {
+      return (
+        (this.filters.projectName === '' || project.name.includes(this.filters.projectName)) &&
+        (this.filters.country === '' || project.country.includes(this.filters.country)) &&
+        (this.filters.status === '' || project.status.includes(this.filters.status))
+      );
+    });
+  }
 }

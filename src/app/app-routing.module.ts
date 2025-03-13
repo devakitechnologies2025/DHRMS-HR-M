@@ -32,6 +32,16 @@ import { BranchComponent } from './branch/branch.component';
 import { BgvComponent } from './bgv/bgv.component';
 import { BgvdashboardComponent } from './bgvdashboard/bgvdashboard.component';
 import { BgvallemployeesComponent } from './bgvallemployees/bgvallemployees.component';
+import { PayrollComponent } from './payroll/payroll.component';
+import { SalarybreakupinformationComponent } from './salarybreakupinformation/salarybreakupinformation.component';
+import { SalarybreakupdetailsComponent } from './salarybreakupdetails/salarybreakupdetails.component';
+import { PayrollmainpageComponent } from './payrollmainpage/payrollmainpage.component';
+import { PayrollheaderComponent } from './payrollheader/payrollheader.component';
+import { OfferletterComponent } from './offerletter/offerletter.component';
+import { OfferletterdetailsComponent } from './offerletterdetails/offerletterdetails.component';
+import { SalariesComponent } from './salaries/salaries.component';
+import { PayslipsComponent } from './payslips/payslips.component';
+import { PfComponent } from './pf/pf.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -39,24 +49,49 @@ const routes: Routes = [
   { path: 'forgot-password', component: ForgetpasswordComponent },
   { path: 'mainpage', component: MainpageComponent },
   { path: 'newuser', component: NewuserComponent },
-  { 
-    path: 'bgvheader', 
-    component: BgvheaderComponent,
+  { path: 'payroll',component:PayrollComponent},
+  { path: 'payroll-main', component: PayrollmainpageComponent }, 
+
+  /** Payroll Routes with Payroll Header **/
+  {
+    path: 'payroll',
+    component: PayrollheaderComponent,  // Payroll Header always visible
     children: [
-      { path: '', redirectTo: 'bgvdashboard', pathMatch: 'full' },  
-      { path: 'bgvdashboard', component: BgvdashboardComponent },
-      { path: 'bgvallemployees', component: BgvallemployeesComponent},
-      { path: 'bgv', component: BgvComponent } ,
+      { path: '', redirectTo: 'salary-breakup-info', pathMatch: 'full' }, // Default route inside Payroll
+      { path: 'main', component: PayrollmainpageComponent },
+      { path: 'salary-breakup-info', component: SalarybreakupinformationComponent },  // Salary Breakup Page
+      { path: 'salary-breakup-details', component: SalarybreakupdetailsComponent },
+      { path: 'offerletter', component: OfferletterComponent},
+      { path: 'offerletterdetails', component: OfferletterdetailsComponent},
+      { path: 'salaries', component: SalariesComponent},
+      { path: 'payslip', component: PayslipsComponent},
+      { path: 'pf', component:PfComponent}
     ]
   },
+
+  /** Background Verification (BGV) Routes **/
+  {
+    path: 'bgvheader',
+    component: BgvheaderComponent,
+    children: [
+      { path: '', redirectTo: 'bgvdashboard', pathMatch: 'full' },
+      { path: 'bgvdashboard', component: BgvdashboardComponent },
+      { path: 'bgvallemployees', component: BgvallemployeesComponent },
+      { path: 'bgv', component: BgvComponent },
+      { path: 'educationaldetails', component: EducationaldetailsComponent },
+      { path: 'employmentdetails', component: EmploymentdetailsComponent },
+    ]
+  },
+
+  /** Header Panel Routes **/
   {
     path: 'header',
     component: HeaderLeftpannelComponent,
     children: [
       { path: 'dashboard', component: DashboardComponent },
-      {path: 'allemp',component: AllemployeesComponent},
-      { path: 'filter', component: FilterComponent},
-      { path: 'personal-info', component: PersonalinformationComponent },  
+      { path: 'allemp', component: AllemployeesComponent },
+      { path: 'filter', component: FilterComponent },
+      { path: 'personal-info', component: PersonalinformationComponent },
       { path: 'professional-info', component: ProfessionalinformationComponent },
       { path: 'documents', component: DocumentsComponent },
       { path: 'accountaccess', component: AccountaccessComponent },
@@ -69,13 +104,11 @@ const routes: Routes = [
       { path: 'add-department', component: AddDepartmentComponent },
       { path: 'projects', component: ProjectsComponent },
       { path: 'addnewproject', component: AddnewprojectComponent },
-      { path: 'holidays', component: HolidaysComponent }, 
-      { path: 'educationaldetails', component: EducationaldetailsComponent},
-      { path: 'employmentdetails', component: EmploymentdetailsComponent},
-      { path: 'jobs', component:JobsComponent},
-      { path: 'branch', component: BranchComponent},
+      { path: 'holidays', component: HolidaysComponent },
+      { path: 'jobs', component: JobsComponent },
+      { path: 'branch', component: BranchComponent },
     ]
-  },
+  }
 ];
 
 @NgModule({

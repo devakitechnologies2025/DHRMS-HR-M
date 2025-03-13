@@ -1,0 +1,251 @@
+
+<div class="page-container">
+  <div class="education-container">
+      <h3>Information</h3>
+
+      <div class="container">
+<div class="templates">
+  <!-- Loop through the templates array -->
+  <div *ngFor="let template of templates" class="template" (click)="openPayslipModal(template)">
+    <i class="bi bi-file-earmark-text"></i>
+    <span>{{ template.name }}</span>
+  </div>
+
+ 
+ <!-- Add New Button -->
+<div class="template add-new" (click)="triggerFileUpload()">
+  <i class="bi bi-plus-circle"></i>
+  <span>Add New</span>
+</div>
+
+<!-- Hidden File Input -->
+<input type="file" #fileInput (change)="uploadTemplate($event)" accept=".pdf,.doc,.docx,.html,.txt" style="display: none;" />
+
+</div>
+<div class="button-container">
+  <button type="button" class="cancel" (click)="handleCancel()">Cancel</button>
+  <button type="button" class="save" [disabled]="!selectedTemplate" (click)="save()">Submit</button>
+</div>
+</div>
+
+
+<!-- Payslip Modal 1 -->
+<div *ngIf="isModalOpen && showModal1" id="payslipModal1" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ selectedTemplate }}</h5>
+        <button type="button" class="btn-close" (click)="closePayslipModal()"></button>
+      </div>
+      <div class="modal-body">
+        <div #payslipContent class="payslip-content">
+            <h4 class="text-center">Payslip</h4>
+            <p class="text-center">Business Name</p>
+            <p class="text-center">Organization number: [Enter organization number]</p>
+            <p class="text-center">Address: [Enter address]</p>
+            <hr>
+            <table class="table-emp">
+                <tbody>
+                    <tr>
+                        <td> <p><strong>Employee name:</strong>John Doe</p> </td>
+                        <td><p><strong>Pay period:</strong> [Start date] to [End date]</p></td>
+                    </tr>
+                   
+                    <tr>
+                        <td><p><strong>Employment status:</strong> Full-time</p></td>
+                        <td><p><strong>Pay date:</strong> [Pay date]</p></td>
+                    </tr>
+                    <tr>
+                        <td><p><strong>Award/agreement:</strong> [Award title if applicable]</p></td>
+                    </tr>
+                    <tr>
+                        <td><p><strong>Classification:</strong> [Employee classification]</p></td>
+                        <td> <p><strong>Annual leave balance:</strong> [xx days/hours]</p></td>
+                    </tr>
+                    <tr>
+                        <td> <p><strong>Hourly rate:</strong> $[Hourly rate]</p></td>
+                        <td> <p><strong>Sick/career's leave balance:</strong> [xx days/hours]</p></td>
+                    </tr>
+                    <tr>
+                        <td><p><strong>Annual salary:</strong> $[Annual salary if applicable]</p></td>
+                       
+                    </tr>
+                </tbody>
+            </table>
+            <hr>
+
+            <h5>Entitlements</h5>
+            <table class="table1">
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Hours / Units</th>
+                        <th>Rate</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ordinary hours</td>
+                        <td>0</td>
+                        <td>$0.0</td>
+                        <td>$0.0</td>
+                    </tr>
+                    <tr>
+                        <td>Other entitlements</td>
+                        <td>0</td>
+                        <td>$0.0</td>
+                        <td>$0.0</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        <td>0</td>
+                        <td></td>
+                        <td><strong>$0.0</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h5>Deductions</h5>
+            <table class="table1">
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Income tax</td>
+                        <td>$0.0</td>
+                    </tr>
+                    <tr>
+                        <td>Other deductions</td>
+                        <td>$0.0</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        <td><strong>$0.0</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h5>Net Pay</h5>
+            <p><strong>Bank details:</strong> [Employee's bank name]</p>
+            <p><strong>Account number:</strong> [Employee's account number]</p>
+            <p><strong>Total net pay:</strong> $0</p>
+        </div>
+    </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="closePayslipModal()">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="downloadPayslip()">Select</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Payslip Modal 2 -->
+<div *ngIf="isModalOpen && showModal2" id="payslipModal2" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ selectedTemplate }}</h5>
+        <button type="button" class="btn-close" (click)="closePayslipModal()"></button>
+      </div>
+      <div class="modal-body">
+        <div class="payslip-container">
+          <h3 class="company-name">Company Name</h3>
+          <p class="company-address">Company Pvt Ltd<br>Address.</p>
+          <h4 class="payslip-header">Pay Slip for the Month of April, 2012</h4>
+          <table class="employee-details">
+            <tr>
+              <td><strong>Employee Name :</strong></td>
+              <td><strong>Employee Id :</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Designation : </strong></td>
+              <td><strong>Date of Joining : </strong></td>
+            </tr>
+            <tr>
+              <td><strong>Standard Days : </strong> </td>
+              <td><strong>L.O.P Days : </strong> </td>
+            </tr>
+          </table>
+          <table class="earnings-deductions">
+            <thead>
+              <tr>
+                <th colspan="2">EARNINGS</th>
+                <th colspan="2">DEDUCTIONS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td>Rs. Ps</td>
+                <td></td>
+                <td>Rs. Ps</td>
+              </tr>
+            
+              <tr>
+                <td>BASIC</td>
+                <td></td>
+                <td>PROVIDENT FUND</td>
+                <td> - </td>
+              </tr>
+              <tr>
+                <td>HOUSE RENT ALLOWANCE</td>
+                <td></td>
+                <td>PROFESSIONAL TAX</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>CONVEYANCE ALLOWANCE</td>
+                <td></td>
+                <td>OTHERS</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>SHIFT ALLOWANCE</td>
+                <td></td>
+                <td>TDS</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>MEDICAL ALLOWANCE</td>
+                <td></td>
+                <td>SALARY ADVANCE</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>SPECIAL ALLOWANCE</td>
+                <td></td>
+                <td>LOSS OF PAY</td>
+                <td></td>
+              </tr>
+              
+              <tr class="total-row">
+                <td><strong>GROSS PAY</strong></td>
+                <td><strong></strong></td>
+                <td><strong>TOTAL DEDUCTIONS</strong></td>
+                <td><strong></strong></td>
+              </tr>
+              <tr class="net-pay-row">
+                <td colspan="2"><strong>NET PAY</strong></td>
+                <td colspan="2"><strong></strong></td>
+              </tr>
+              <tr class="amount-in-words">
+                <td colspan="2"><strong>Rupees in Words:</strong></td>
+                <td colspan="2"><strong></strong></td>
+              </tr>
+              <p>*Computer Generated Payslips Signature Not Required</p>
+            </tbody> 
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" (click)="closePayslipModal()">Cancel</button>
+          <button type="button" class="btn btn-primary" (click)="downloadPayslip()">Select</button>
+        </div>
+      </div>
+    </div>
+  </div></div>
+     

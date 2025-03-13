@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 20px;
+}
+.container {
+    width: 60%;
+    margin: auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 5%;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+.header-title {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+.user-icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
+.edit-button {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.edit-button i {
+    font-size: 14px;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 15px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+.form-group label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+.form-group input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    color: #555;
+}
+.form-group input:focus {
+    border-bottom: 2px solid blue;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel {
+    color: black;
+    background-color: whitesmoke;
+  
+    margin-top: 5%;
+}

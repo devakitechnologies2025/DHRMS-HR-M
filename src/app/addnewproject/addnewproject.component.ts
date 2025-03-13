@@ -35,6 +35,8 @@ export class AddnewprojectComponent {
   };
 
   
+  managers: string[] = ["John Doe", "Jane Smith", "Robert Brown", "Emily Johnson", "Michael Scott"];
+  HR: string[] = ["John Doe", "Jane Smith", "Robert Brown", "Emily Johnson", "Michael Scott"];
 
   currentSection: string = 'client'; // Track the current section (client, budget, assign)
 

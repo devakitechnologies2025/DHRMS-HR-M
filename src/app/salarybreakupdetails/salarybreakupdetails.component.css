@@ -1,0 +1,92 @@
+.salary-container {
+    color: black;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+    margin: auto;
+    margin-top: 10%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-container {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Adjusts spacing between icon and text */
+}
+
+.user-icon {
+    font-size: 24px;
+    color: black;
+}
+
+.info-text {
+    font-size: 18px;
+    margin-right: 70%;
+}
+
+
+
+.edit-btn {
+    background: #4a90e2;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.salary-table {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.cell {
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+label {
+    font-size: 0.9em;
+    color: #aaa;
+    display: block;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    color: black;
+    border: 1px solid #555;
+    border-radius: 5px;
+}
+
+.buttons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.save-btn, .cancel-btn {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.save-btn {
+    background: #28a745;
+    color: white;
+}
+
+.cancel-btn {
+    background: #dc3545;
+    color: white;
+}

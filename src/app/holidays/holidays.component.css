@@ -4,7 +4,7 @@
     height: 87vh;  /*Set height to 80vh */
     width: 1100px; /* Set container width to 75% */
     border: 1px solid #A2A1A833;
-    margin-left: 330px; /* Centers container horizontally */
+    margin-left: 304px; /* Centers container horizontally */
     border-radius: 10px;
 }
  
@@ -16,7 +16,7 @@
     border-radius: 10px;
     display: flex;
  
-.button {
+ .button{
    
     /* border: 2px solid red; */
     margin-left: auto;
@@ -26,7 +26,7 @@
  
 .button button{
     height: 45px;
-    width: 220px;
+    width: 200px;
     background-color: #3F8CFF;
     font-family: lexend;
  
@@ -44,22 +44,24 @@
     /* border-radius: 100%; */
    
 }
+.bi-search {
+  position: absolute;
+  left: 10px;
+  top: 63%;
+  transform: translateY(-50%);
+}
    
 }
 .container1 input {
     width: 300px;
-    height: 39px ;
+    height: 45px ;
     margin-top: 15px;
     font-family: lexend;
    
     padding-right: 16px;
    
     border: 1px solid #ccc;
-    border-radius: 5px;
-    background-image: url('../../assets/search.png');
-    background-position: 10px center;
-    background-size: 20px;
-    background-repeat: no-repeat;
+    border-radius: 10px;
     padding-left: 39px; /* Adjust for the icon */
     box-shadow: none !important;
   }

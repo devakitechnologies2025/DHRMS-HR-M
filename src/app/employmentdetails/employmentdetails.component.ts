@@ -62,7 +62,7 @@ export class EmploymentdetailsComponent {
 
   // Handle Cancel button
   handleCancel() {
-    this.router.navigate(['/header/educationaldetails']);
+    this.router.navigate(['/bgvheader/educationaldetails']);
   }
 
   // Handle Save button

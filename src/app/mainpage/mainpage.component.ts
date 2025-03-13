@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-mainpage',
@@ -9,7 +9,7 @@ import { NavigationEnd, Router } from '@angular/router';
   styleUrl: './mainpage.component.css'
 })
 export class MainpageComponent {
-  username = 'Ameer';
+  username = 'HR Nexus';
   activeButton: string = '';
   currentRoute: string = ''; // Display-friendly route name
   isMenuVisible = false;  // Tracks if logout menu is visible
@@ -31,7 +31,6 @@ export class MainpageComponent {
 
   ngOnInit() {
     this.setGreeting();
-    this.updateRoute();
   }
 
   setGreeting() {
@@ -45,38 +44,4 @@ export class MainpageComponent {
     }
   }
 
-  updateRoute() {
-    this.router.events.subscribe((event: any) => {
-      if (event instanceof NavigationEnd) {
-        this.handleRouteChange(this.router.url);
-      }
-    });
-  }
-
-  handleRouteChange(route: string) {
-    this.showGreetingAndIcon = false;
-
-    const routeMap: { [key: string]: { name: string; greeting: string } } = {
-      '/header/all-departments': { name: 'All Departments', greeting: '' },
-      '/header/allemp': { name: 'All Employees - Employees', greeting: 'Employee' },
-      '/header/software': { name: 'All Department - Software', greeting: 'Software' },
-      '/header/NON-IT': { name: 'All Department - NON-IT', greeting: 'NON-IT' },
-      '/header/banking': { name: 'All Department - Banks', greeting: 'Banking' },
-      '/header/hospital': { name: 'All Department - Hospital', greeting: 'Hospital' },
-      '/header/school': { name: 'All Department - School', greeting: 'School' },
-      '/header/projects': { name: 'All Projects', greeting: 'All Projects Information' },
-      '/header/holidays': { name: 'Holidays', greeting: 'Show All Holidays' },
-      '/header/addnewproject': { name: 'All Projects', greeting: 'Add New Project Information' },
-      '/header/branch': { name: 'Branch', greeting: 'All Branch Information' },
-    };
-
-    if (routeMap[route]) {
-      this.currentRoute = routeMap[route].name;
-      this.greeting = routeMap[route].greeting;
-    } else {
-      this.showGreetingAndIcon = true;
-      this.setGreeting();
-    }
-  }
 }
-

@@ -1,67 +1,55 @@
-<div class="container-fluid vh-100 d-flex align-items-center justify-content-center">
-  <div class="row w-75 bg-white shadow rounded">
-    <!-- Left Side: Information -->
-    <div class="col-md-6 p-5 bg-primary text-white d-flex flex-column justify-content-center rounded-start">
-      <h2 class="d-flex align-items-center mb-4">
-        <img src="../../assets/devaki logo.png" alt="Devaki Logo" class="me-2 rounded-circle" width="50">
-        <span>HRMS</span>
-      </h2>
-      <h1 class="display-5 fw-bold">Your place to work<br>Plan. Create. Control</h1>
-      <img src="../../assets/Illustration.png" alt="Workspace illustration" class="img-fluid rounded mt-4">
-    </div>
+<div class="container d-flex flex-column flex-md-row align-items-center min-vh-100">
+  <!-- Left Side: Information -->
+  <div class="col-md-6 d-flex flex-column justify-content-center text-white  p-5  " style="background: #3F8CFF;border-top-left-radius: 20px; border-bottom-left-radius: 20px">
+    <h2 class="d-flex align-items-center mb-3">
+      <img src="../../assets/devaki tech.jpg" class="logo me-2" width="50" height="50">
+      <span>HRMS</span>
+    </h2>
+    <h1 class="fs-10">Your place to work<br>Plan. Create. Control</h1>
+    <img src="../../assets/Illustration.jpg" class="img-fluid rounded mt-3" alt="Workspace illustration">
+  </div>
 
-    <!-- Right Side: Login Form -->
-    <div class="col-md-6 p-5">
-      <h2 class="d-flex align-items-center mb-4">
-        <img src="../../assets/devaki logo.png" alt="Devaki Logo" class="me-2 rounded-circle" width="50">
-        <span>HRMS</span>
+  <!-- Right Side: Login Form -->
+  <div class="col-md-6 d-flex flex-column align-items-center p-5 rounded-end">
+    <div class="w-100" style="max-width: 400px; ">
+      <h1 class="d-flex align-items-center text-primary mb-3">
+        <img src="../../assets/devaki tech.jpg" class="logo me-2" width="50" height="50">
+        HRMS
+      </h1>
+      <h2 class="d-flex align-items-center">
+        Welcome
+        <img src="../../assets/path-to-emoji.jpg" alt="Hello Hand Icon" class="ms-2" width="40">
       </h2>
-      <h3 class="fw-bold mb-3">Welcome 👋</h3>
       <p class="text-muted">Please login here</p>
-
-      <form (ngSubmit)="validateCredentials()">
-        <div class="mb-3">
-          <input 
-            type="text" 
-            class="form-control" 
-            id="username" 
-            name="username" 
-            placeholder="Email or Employee ID" 
-            [(ngModel)]="email"
-            required>
+      <p *ngIf="errorMessage" class="text-danger fw-bold">{{ errorMessage }}</p>
+      
+      <form (ngSubmit)="validateCredentials()" class="w-100">
+        <div class="mb-3 floating-label">
+          <input type="text" id="username" name="username" class="form-control" placeholder="Email or Employee ID" [(ngModel)]="email" required>
+          <label for="username">Email Address</label>
         </div>
-
-        <div class="mb-3 position-relative">
-          <input 
-            [type]="passwordVisible ? 'text' : 'password'" 
-            class="form-control" 
-            id="password" 
-            name="password" 
-            placeholder="Password" 
-            [(ngModel)]="password" 
-            required>
-          <i 
-            class="bi" 
-            [ngClass]="passwordVisible ?   'bi-eye' :'bi-eye-slash'"
-            (click)="togglePasswordVisibility()" 
-            style="cursor: pointer; position: absolute; top: 50%; right: 10px; transform: translateY(-50%);">
-          </i>
-        </div>
-
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <a routerLink="/forgot-password" class="text-primary text-decoration-none">Forgot Password?</a>
-        </div>
-
-        <button type="submit" class="btn btn-primary w-100 mb-3">Login</button>
-
-        <div class="text-center text-muted mb-3">or</div>
-
-        <div class="text-center">
-          <a routerLink="/newuser" class="text-primary text-decoration-none">New User?</a>
-        </div>
+        
+        <div class="mb-3 position-relative floating-label">
+          <input type="password" id="password" name="password" 
+                 class="form-control" placeholder="Password" [(ngModel)]="password" required>
+          <label for="password">Password</label>
+          <i class="bi fs-4 position-absolute end-0 me-3" 
+             [class.bi-eye]="!isPasswordVisible" 
+             [class.bi-eye-slash]="isPasswordVisible"
+             (click)="togglePasswordVisibility('password')"></i>
+        </div>  
+      
+        <button type="submit" class="btn btn-primary w-100">Login</button>
       </form>
-
-      <p *ngIf="errorMessage" class="text-danger mt-3">{{ errorMessage }}</p>
+      
+      <div class="text-center mt-3">
+        <a routerLink="/forgot-password" class="text-decoration-none text-primary">Forgot Password?</a>
+        <div class="separator my-3 d-flex align-items-center justify-content-center text-muted">
+          <span class="px-2">or</span>
+        </div>
+        <a routerLink="/newuser" class="text-decoration-none text-primary">New User?</a>
+      </div>
     </div>
   </div>
+  
 </div>

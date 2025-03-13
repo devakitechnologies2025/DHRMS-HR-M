@@ -9,6 +9,10 @@
                 </h2>
 
                 <div class="nav flex-column">
+                    <a class="nav-link example-btn" 
+                    (click)="setActiveButton('dashboard')" routerLink="/mainpage">
+                        <i class="bi bi-house-door"></i>     Home
+                    </a>
                     <a class="nav-link example-btn" [ngClass]="{'active': activeButton === 'dashboard'}" 
                         (click)="setActiveButton('dashboard')" routerLink="/header/dashboard">
                         <i class="bi bi-grid me-2"></i>Dashboard

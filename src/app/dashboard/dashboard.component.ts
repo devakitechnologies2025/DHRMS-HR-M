@@ -6,7 +6,7 @@ import Chart from 'chart.js/auto';
   selector: 'app-dashboard',
   standalone: false,
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css'] // ✅ Fixed
+  styleUrls: ['./dashboard.component.css'] 
 })
 export class DashboardComponent implements AfterViewInit {
 
@@ -104,7 +104,5 @@ export class DashboardComponent implements AfterViewInit {
       ]
     };
   }
-  redirectToMainPage() {
-    window.location.href = '/mainpage';
-  }
+
 }

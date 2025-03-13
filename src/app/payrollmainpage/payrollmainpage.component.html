@@ -1,0 +1,94 @@
+<body>
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div class="header d-flex align-items-center justify-content-between">
+            <div class="company-logo d-flex align-items-center">
+                <img src="../../assets/devaki logo.png" alt="Company Logo" class="logo">
+                <span class="hrms-text">HRMS</span>
+            </div>
+            
+            <div class="username">
+                <span *ngIf="!showGreetingAndIcon">
+                    <div>{{ currentRoute }}</div>
+                    <div class="greeting-text">{{ greeting }}</div>
+                </span>
+    
+                <span *ngIf="showGreetingAndIcon">
+                    <span class="username">{{ 'Hello, ' + username }}👋</span>
+                    <span class="greeting-text">{{ greeting }}</span>
+                </span>
+            </div>
+    
+            <div class="search-bar d-flex align-items-center position-relative">
+                <div class="position-relative search-container me-2">
+                    <i class="bi bi-search fs-4"></i>
+                    <input type="text" class="form-control search-input" placeholder="Search">
+                </div>
+                <i class="bi bi-bell fs-3 me-2"></i>
+            </div>
+    
+            <div class="employee-info d-flex align-items-center">
+                <img src="../../assets/profile.png" alt="Employee Image" class="emp-image">
+                <div class="emp-details">
+                    <span class="emp-name">{{username}}</span>
+                    <span class="emp-designation">HR Manager</span>
+                </div>
+                    <!-- Bootstrap Down Arrow Icon -->
+    <i class="bi bi-chevron-down ms-2 toggle-icon" (click)="toggleLogoutMenu()"></i>
+                <div class="logout-menu" *ngIf="isMenuVisible">
+                    <button class="btn btn-danger logout-btn" (click)="logout()">Logout</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="cards-container">
+        <!-- Row 1: First 5 Cards -->
+        <a routerLink="/payroll/salary-breakup-info" class="card-link">
+            <div class="card1">
+                <div class="container">
+                    <h1>Salary Break-up</h1>
+                    <img src="../../assets/salarybreakup.png" alt="Avatar" class="icon">
+                </div>
+            </div>
+        </a>
+               
+    
+        <a routerLink="/payroll/offerletter" class="card-link">
+            <div class="card2">
+                <div class="container">
+                    <h1>Offer Letter</h1>
+                    <img src="../../assets/offerletter.png" alt="Avatar" class="icon">
+                </div>
+            </div>
+        </a>
+    
+        <a routerLink="/payroll/salaries" class="card-link">
+            <div class="card3">
+                <div class="container">
+                    <h1>Salaries</h1>
+                    <img src="../../assets/salaries.png" alt="Avatar" class="icon">
+                </div>
+            </div>
+        </a>
+    
+        <a routerLink="/payroll/payslip" class="card-link">
+            <div class="card4">
+                <div class="container">
+                    <h1>Payslips</h1>
+                    <img src="../../assets/payslipd.png" alt="Avatar" class="icon">
+                </div>
+            </div>
+        </a>
+    
+        <a routerLink="/payroll/pf" class="card-link">
+            <div class="card5">
+                <div class="container">
+                    <h1>PF</h1>
+                    <img src="../../assets/pf.png" alt="Avatar" class="icon">
+                </div>
+            </div>
+        </a>
+    
+    </div>
+
+</body>

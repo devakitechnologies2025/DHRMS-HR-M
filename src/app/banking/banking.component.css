@@ -16,14 +16,12 @@
   box-shadow: none;
   border-radius: 10px;
 }
-.search-icon {
+.bi-search {
   position: absolute;
   left: 10px;
   top: 50%;
   transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  pointer-events: none; /* Prevents interference with input */
+  
 }
 .search-bar {
   padding-left: 40px !important; /* Ensures text doesn't overlap with icon */

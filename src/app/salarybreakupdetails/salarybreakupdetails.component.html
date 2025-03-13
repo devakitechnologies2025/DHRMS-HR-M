@@ -1,0 +1,63 @@
+<div class="salary-container">
+    <div class="header">
+        <i class="bi bi-person user-icon"></i>
+        <span class="info-text">Information</span>
+        <button class="edit-btn" (click)="toggleEditMode()">
+            <i class="bi bi-pencil-square"></i> Edit
+        </button>
+    </div>
+
+    <div class="salary-table">
+        <div class="row">
+            <div class="cell">
+                <label>Basic Pay</label>
+                <div *ngIf="!isEditing">{{ salaryData.basicPay }}</div>
+                <input *ngIf="isEditing" type="text" [(ngModel)]="salaryData.basicPay">
+            </div>
+            <div class="cell">
+                <label>HRA</label>
+                <div *ngIf="!isEditing" class="data">{{ salaryData.hra }}</div>
+                <input *ngIf="isEditing" type="text" [(ngModel)]="salaryData.hra">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cell">
+                <label>Conveyance Allowance</label>
+                <div *ngIf="!isEditing">{{ salaryData.conveyance }}</div>
+                <input *ngIf="isEditing" type="text" [(ngModel)]="salaryData.conveyance">
+            </div>
+            <div class="cell">
+                <label>Entertainment Allowance</label>
+                <div *ngIf="!isEditing">{{ salaryData.entertainment }}</div>
+                <input *ngIf="isEditing" type="text" [(ngModel)]="salaryData.entertainment">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cell">
+                <label>Medical Allowance</label>
+                <div *ngIf="!isEditing">{{ salaryData.medical }}</div>
+                <input *ngIf="isEditing" type="text" [(ngModel)]="salaryData.medical">
+            </div>
+            <div class="cell">
+                <label>Shift Allowance</label>
+                <div *ngIf="!isEditing">{{ salaryData.shift }}</div>
+                <input *ngIf="isEditing" type="text" [(ngModel)]="salaryData.shift">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cell">
+                <label>Special Allowance</label>
+                <div *ngIf="!isEditing">{{ salaryData.special }}</div>
+                <input *ngIf="isEditing" type="text" [(ngModel)]="salaryData.special">
+            </div>
+        </div>
+    </div>
+
+    <div class="buttons" *ngIf="isEditing">
+        <button class="save-btn" (click)="saveChanges()">Save</button>
+        <button class="cancel-btn" (click)="cancelEdit()">Cancel</button>
+    </div>
+</div>

@@ -36,6 +36,16 @@ import { BranchComponent } from './branch/branch.component';
 import { BgvComponent } from './bgv/bgv.component';
 import { BgvallemployeesComponent } from './bgvallemployees/bgvallemployees.component';
 import { PayrollComponent } from './payroll/payroll.component';
+import { PayrollmainpageComponent } from './payrollmainpage/payrollmainpage.component';
+import { PayrollheaderComponent } from './payrollheader/payrollheader.component';
+import { SalarybreakupinformationComponent } from './salarybreakupinformation/salarybreakupinformation.component';
+import { SalarybreakupdetailsComponent } from './salarybreakupdetails/salarybreakupdetails.component';
+import { OfferletterComponent } from './offerletter/offerletter.component';
+import { OfferletterdetailsComponent } from './offerletterdetails/offerletterdetails.component';
+import { SalariesComponent } from './salaries/salaries.component';
+import { PayslipsComponent } from './payslips/payslips.component';
+import { PfComponent } from './pf/pf.component';
+import { NgxDocViewerModule } from 'ngx-doc-viewer';
 
 @NgModule({
   declarations: [
@@ -67,6 +77,15 @@ import { PayrollComponent } from './payroll/payroll.component';
     BgvComponent,
     BgvallemployeesComponent,
     PayrollComponent,
+    PayrollmainpageComponent,
+    PayrollheaderComponent,
+    SalarybreakupinformationComponent,
+    SalarybreakupdetailsComponent,
+    OfferletterComponent,
+    OfferletterdetailsComponent,
+    SalariesComponent,
+    PayslipsComponent,
+    PfComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,7 +96,8 @@ import { PayrollComponent } from './payroll/payroll.component';
     AddDepartmentComponent,
     RouterModule,
     PersonalinformationComponent,
-    BgvdashboardComponent
+    BgvdashboardComponent,
+    NgxDocViewerModule,
 ],
   providers: [
     provideClientHydration(withEventReplay())

@@ -1,0 +1,88 @@
+
+  
+  .page-container {
+    margin: 5% auto;
+    width: 95%; /* Increased width */
+    max-width: 1100px; /* More space for larger screens */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 30px; /* Slightly increased padding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right:7%;
+    font-family: lexend;
+  }
+
+
+/* Education Container */
+.education-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  text-align: center;
+}
+
+/* Heading */
+.education-container h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Button Container */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Primary Button (PF Login) */
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Secondary Button (Data) */
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+/* New Entry Button */
+.add-new {
+  background-color: #28a745;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-new i {
+  font-size: 20px;
+}
+
+.add-new:hover {
+  background-color: #218838;
+}

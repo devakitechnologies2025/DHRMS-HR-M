@@ -1,0 +1,45 @@
+<body>
+    <div class="container">
+        <h5 class="header">
+            <i class="bi bi-person user-icon"></i> Information
+        </h5>
+        
+        <form #offerletterForm="ngForm">
+            <div class="grid-container">
+                <div class="row">
+                    <div class="form-group date-input-container" style="position: relative;">
+                        <input
+                            type="date"
+                            id="joiningDate"
+                            class="joiningDate-input"
+                            placeholder=" "
+                            required
+                        />
+                        <label for="joiningDate" class="joiningDate-label">Date of Joining</label>
+                    </div>
+
+                
+
+                    <div class="form-group">
+                        <input type="text" id="employeename" [(ngModel)]="offerletter.employeename" name="employeename" placeholder="Employee Name" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <input type="text" id="designation" [(ngModel)]="offerletter.designation" name="designation" placeholder="Designation" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" id="ctc" [(ngModel)]="offerletter.ctc" name="ctc" placeholder="CTC" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button type="button" class="cancel" (click)="handleCancel()">Cancel</button>
+                <button type="submit" class="save" [disabled]="!offerletterForm.valid" (click)="save()">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>

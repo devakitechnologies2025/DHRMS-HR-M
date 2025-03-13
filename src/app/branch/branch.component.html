@@ -15,7 +15,7 @@
         </button>
     
         <!-- Filter Button with Proper Spacing -->
-        <button class="btn btn-light d-flex align-items-center gap-2 ms-1">
+        <button class="btn btn-light d-flex align-items-center gap-2 ms-1" (click)="toggleFilterSection()" >
             <i class="bi bi-sliders"></i> 
             <span>Filter</span>
         </button>
@@ -62,7 +62,7 @@
 
   <div class="overlay" *ngIf="showAddbranchsForm">
     <div class="add-holiday-form">
-        <h2>Add New Holiday</h2>
+        <h2>Add New Branch</h2>
         <form (ngSubmit)="closeAddbranchsForm()">
           <div class="mb-3">
             <select class="form-control" id="country" name="country" required>
@@ -70,7 +70,14 @@
               <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
             </select>
           </div>
-   
+
+          <div class="mb-3">
+            <select class="form-control" id="state" name="state" required>
+              <option value="" disabled selected>State</option>
+              <option *ngFor="let state of state" [value]="state">{{ state }}</option>
+            </select>
+          </div>
+
           <!-- Branch City Dropdown -->
           <div class="mb-3">
             <select class="form-control" id="branchCity" name="branchCity" required>
@@ -96,4 +103,60 @@
         </div>
         </form>
     </div>
+</div>
+
+<div class="filter-section-modal" *ngIf="showFilterSection">
+  <div class="filter-container">
+    <h4>Filter Branches</h4>
+
+    <div class="input-group" style="width: 300px;">
+      <div class="input-group-prepend">
+        <i class="bi bi-search fs-4"></i>
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+    </div>
+    <form>
+      <!-- Country -->
+      <div class="mb-3">
+        <label class="form-label">Country</label>
+        <select class="form-select" [(ngModel)]="filters.country" (change)="applyFilters()">
+          <option value="">All</option>
+          <!-- <option *ngFor="let country of uniqueCountries" [value]="country">{{ country }}</option> -->
+          <option >India</option>
+          <option >US</option>
+          <option >chaina</option>
+          <option >jimbombay</option>
+        </select>
+      </div>
+      <!-- Branch state -->
+      <div class="mb-3">
+        <label class="form-label">State</label>
+        <select class="form-select" [(ngModel)]="filters.state" (change)="applyFilters()">
+          <option value="">All</option>
+          <!-- <option *ngFor="let state of uniqueState" [value]="state">{{ state }}</option> -->
+          <option >karnataka</option>
+          <option >Maharastra</option>
+          <option >Andhra pradesh</option>
+          <option >Telengana</option>
+        </select>
+      </div>
+       <!-- Branch City -->
+      <div class="mb-3">
+        <label class="form-label">City</label>
+        <select class="form-select" [(ngModel)]="filters.city" (change)="applyFilters()">
+          <option value="">All</option>
+          <!-- <option *ngFor="let city of uniqueCities" [value]="city">{{ city }}</option> -->
+          <option >Bengauru</option>
+          <option >pune</option>
+          <option >Amaravathi</option>
+          <option >Hyderabad</option>
+        </select>
+      </div>      
+    </form>
+  
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-danger" (click)="cancelFilters()">Cancel</button>
+      <button class="btn btn-primary ms-2">Apply</button>
+    </div>
+  </div>
 </div>

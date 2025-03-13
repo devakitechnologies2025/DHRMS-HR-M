@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class BgvdashboardComponent {
   updateDate: string;
+  activeButton: string = 'dashboard';
 
   constructor(private router: Router) {
     this.updateDate = `Update: ${new Date().toLocaleDateString('en-US', { 

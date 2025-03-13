@@ -10,8 +10,8 @@ import { NavigationEnd, Router } from '@angular/router'
   styleUrl: './header-leftpannel.component.css'
 })
 export class HeaderLeftpannelComponent {
-  username = 'Ameer';
-  activeButton: string = '';
+  username = 'HR Nexus';
+  activeButton: string = 'dashboard';
   currentRoute: string = ''; // Display-friendly route name
   isMenuVisible = false;  // Tracks if logout menu is visible
   greeting: string = '';
@@ -64,13 +64,28 @@ export class HeaderLeftpannelComponent {
   }
  
   handleRouteChange(route: string) {
-    // Reset currentRoute and greeting by default
+    // Reset currentRoute and greeting by default /header/professional-info
     
     this.showGreetingAndIcon = false; // Default to hide hello and icon
     
     if (route === '/header/all-departments') {
       this.currentRoute = 'All Departments';
       this.greeting = ''; // No additional greeting
+    } else if (route === '/header/allemp') {
+      this.currentRoute = 'All Employees';
+      this.greeting = ' All Employee Information';
+    } else if (route === '/header/personal-info') {
+      this.currentRoute = 'All Employees';
+      this.greeting = ' All Employee Information';
+    } else if (route === '/header/professional-info') {
+      this.currentRoute = 'All Employees';
+      this.greeting = ' All Employee Information';
+    } else if (route === '/header/documents') {
+      this.currentRoute = 'All Employees';
+      this.greeting = ' All Employee Information';
+    } else if (route === '/header/accountaccess') {
+      this.currentRoute = 'All Employees';
+      this.greeting = ' All Employee Information';
     } else if (route === '/header/software') {
       this.currentRoute = 'All Department - Software';
       this.greeting = 'Software';
@@ -99,9 +114,11 @@ export class HeaderLeftpannelComponent {
       this.greeting = 'Add New Project Information';
     }
     else if (route === '/header/branch') {
-      this.currentRoute = 'Branche';
+      this.currentRoute = 'Branch';
       this.greeting = 'All Branche Informantion';
     }
+  
+ 
      else  {
       // Handle other cases (like /header/dashboard)
       this.showGreetingAndIcon = true;
@@ -109,7 +126,5 @@ export class HeaderLeftpannelComponent {
     }
   }
   
-  // capitalize(word: string): string {
-  //   return word.charAt(0).toUpperCase() + word.slice(1);
-  // }
+ 
 }

@@ -10,12 +10,13 @@ import { Router } from '@angular/router';
 })
 export class BgvComponent {
   showForm: any;
+  
   constructor(private router: Router) { }
   handleNext() {
-    this.router.navigate(['/header/educationaldetails']); // Redirect to Educational Details
+    this.router.navigate(['/bgvheader/educationaldetails']); // Redirect to Educational Details
   }
 
   handleCancel() {
-    this.router.navigate(['/mainpage']);
+    window.history.back();
   }
 }

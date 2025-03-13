@@ -1,0 +1,177 @@
+/* Header Styling */
+.header {
+    width: 100%;
+    height: 70px;
+    margin-top: 20px;
+    display: flex;
+
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+
+
+.username {
+    font-size: 20px;
+    font-weight: 800;
+    display: flex;
+    flex-direction: column;
+}
+
+.greeting-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Search Bar */
+.search-container {
+    position: relative;
+}
+
+.bi-search {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.search-input {
+    padding-left: 45px; /* Increased padding to move the placeholder to the right */
+    height: 45px; /* Adjust as needed */
+    width: 350px; /* Adjust width as needed */
+    box-shadow: none;
+    border-radius: 10px;
+}
+.bi-bell {
+
+    width: 30px;
+    height: 40px;
+    background: #f8f8f8;
+    border-radius: 5px;
+
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Employee Info */
+.employee-info {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.emp-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    margin-right: 3px;
+}
+
+.emp-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.emp-name {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.emp-designation {
+    font-size: 14px;
+    color: #777;
+}
+
+.toggle-icon {
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.toggle-icon.rotated {
+    transform: rotate(180deg);
+}
+
+.logout-menu {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Left Panel */
+.left-panel {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    height: 100vh;
+    width: 280px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+
+
+}
+
+.company-logo {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.comlog {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #005CC1;
+}
+
+.example-btn {
+    display: flex;
+    align-items: center;
+    color: #16151C;
+    padding: 10px;
+    width: 220px;
+    font-size: 18px;
+    transition: background 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+.example-btn:hover {
+    background-color: #e9ecef;
+}
+
+.example-btn.active {
+    border-left: 5px solid #5755c9;
+    background-color: #e4e1e1;
+    color: #5755c9;
+
+}
+.example-btn.active .btn-icon {
+    filter: invert(30%) sepia(73%) saturate(5000%) hue-rotate(231deg) brightness(105%) contrast(100%);
+}
+
+
+.btn-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    
+}

@@ -1,0 +1,53 @@
+<div class="page-container">
+    <div class="education-container">
+        <h3>Information</h3>
+
+        <div class="container">
+            <div class="bank-grid">
+                <div *ngFor="let bank of banks" 
+                     class="bank-card" 
+                     [class.selected]="selectedBank?.id === bank.id" 
+                     (click)="selectBank(bank)">
+                    <img [src]="bank.logo" [alt]="bank.name" class="bank-logo">
+                </div>
+
+                <!-- Add New Bank Card -->
+                <div class="bank-card add-card" (click)="toggleAddBankPopup()">
+                    <span>+ Add New</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <button type="button" class="cancel" (click)="handleCancel()">Cancel</button>
+            <button type="button" class="save" [disabled]="!selectedBank" (click)="save()">Submit</button>
+        </div>
+    </div>
+
+    <!-- ✅ Add Bank Modal -->
+    <div *ngIf="showAddBankPopup" class="filter-section-modal">
+        <div class="filter-container">
+            <h4>Add Bank</h4>
+
+            <!-- Search Input -->
+            <div class="mb-3 position-relative">
+                <i class="bi bi-search position-absolute search-icon"></i>
+                <input type="text" [(ngModel)]="newBank.name" class="form-control search-input" placeholder="Bank Name " />
+            </div>
+
+            <!-- <div class="mb-3 position-relative">
+                <input type="text" [(ngModel)]="newBank.logo" class="form-control" placeholder="Bank Logo URL" />
+            </div>
+
+            <div class="mb-3 position-relative">
+                <input type="text" [(ngModel)]="newBank.details" class="form-control" placeholder="Bank Details" />
+            </div> -->
+
+            <!-- Buttons -->
+            <div class="d-flex justify-content-end">
+                <button class="btn btn-danger" (click)="toggleAddBankPopup()">Cancel</button>
+                <button class="btn btn-primary ms-2" (click)="addBank()">Add</button>
+            </div>
+        </div>
+    </div>
+</div>

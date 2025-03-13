@@ -1,0 +1,49 @@
+<div class="page-container">
+    <div class="education-container">
+        <h3> Information</h3>
+
+        <form #salaryForm="ngForm">
+            <div class="grid-container">
+                <div class="form-group">
+                    <input type="text" id="basicPay" [(ngModel)]="salaryData.basicPay" name="basicPay"
+                        placeholder="Basic Pay (50% on CTC)">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="hra" [(ngModel)]="salaryData.hra" name="hra"
+                        placeholder="HRA (50% on Basic Pay)">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="conveyance" [(ngModel)]="salaryData.conveyance" name="conveyance"
+                        placeholder="Convenience Allowance (18k-30k)">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="entertainment" [(ngModel)]="salaryData.entertainment" name="entertainment"
+                        placeholder="Entertainment Allowance (12k)">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="medical" [(ngModel)]="salaryData.medical" name="medical"
+                        placeholder="Medical Allowance (15k per annum)">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="shift" [(ngModel)]="salaryData.shift" name="shift"
+                        placeholder="Shift Allowance (12k)">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="special" [(ngModel)]="salaryData.special" name="special"
+                        placeholder="Special Allowance (Balance Amount)">
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button type="button" class="cancel" (click)="handleCancel()">Cancel</button>
+                <button type="button" class="save" (click)="save()">Save</button>
+            </div>
+        </form>
+    </div>
+</div>

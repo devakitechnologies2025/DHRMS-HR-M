@@ -1,4 +1,5 @@
 import { ChangeDetectorRef, Component, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-payroll',
@@ -13,7 +14,7 @@ export class PayrollComponent {
   selectedCountryName: string = 'Select Country';
   dropdownOpen: boolean = false; // Tracks if dropdown is open
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(private cdr: ChangeDetectorRef,private router: Router) {}
 
 
   countryList = [
@@ -59,9 +60,11 @@ export class PayrollComponent {
     }, 0);
   }
   
-  
+  confirmSelection() {
+    this.router.navigate(['/payroll-main']);  // Navigate to Payroll Main Page only
+  }
 
   closeModal() {
-    this.showModal = false;
+    this.router.navigate(['/mainpage']);
   }
 }

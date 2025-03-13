@@ -11,8 +11,8 @@ import { NavigationEnd, Router } from '@angular/router';
 export class BgvheaderComponent {
 
 
-  username = 'Ameer';
-  activeButton: string = 'bgvdashboard'; // Set default active button to BGV
+  username = 'HR Nexus';
+  activeButton: string = 'dashboard'; // Set default active button to BGV
   currentRoute: string = ''; // Display-friendly route name
   isMenuVisible = false;  // Tracks if logout menu is visible
   greeting: string = '';
@@ -68,12 +68,18 @@ export class BgvheaderComponent {
   handleRouteChange(route: string) {
     this.showGreetingAndIcon = false; // Default to hide hello and icon
 
-    if (route === '/bgvheader/bgv') {
+    if (route === '/bgvheader/bgvallemployees') {
       this.currentRoute = 'BGV';
       this.greeting = 'All Employees Information';
-    } else if (route === '/bgvheader/settings') {
-      this.currentRoute = 'All Employees - Add New Employee';
-      this.greeting = 'Settings';
+    } else if (route === '/bgvheader/bgv') {
+      this.currentRoute = 'BGV';
+      this.greeting = 'All Employees Information';
+    } else if (route === '/bgvheader/educationaldetails') {
+      this.currentRoute = 'BGV';
+      this.greeting = 'All Employees Information';
+    } else if (route === '/bgvheader/employmentdetails') {
+      this.currentRoute = 'BGV';
+      this.greeting = 'All Employees Information';
     } else {
       this.showGreetingAndIcon = true;
       this.setGreeting(); // Set default greeting
